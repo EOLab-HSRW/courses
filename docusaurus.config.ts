@@ -21,8 +21,8 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'courses', // Usually your repo name.
+  organizationName: 'EOLab-HSRW',
+  projectName: 'courses',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

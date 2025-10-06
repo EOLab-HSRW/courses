@@ -40,7 +40,7 @@ The following schedule is subject to modifications.
 | W11  | 2025.12.19    | Observers; separation principle.                        |                  |
 | W12  | 2026.01.09    | Sampling & discrete-time models (ZOH, z-domain).        |                  |
 | W13  | 2026.01.16    | Digital design (discrete PID, RL/Bode in z).            |                  |
-| W14  |               | Capstone demo + review.                                 |                  |
+| W14  |               | Final project demo.                                 |                  |
 
 ## Assessment & Grading (TBD)
 

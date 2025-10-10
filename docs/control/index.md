@@ -1,4 +1,4 @@
-# Control Engineering CI_5.02
+# Control Engineering ISE 8381 (Elective)
 
 ![Banner control. Two weels robot self-balancing in upright position](./banner-control.jpeg)
 

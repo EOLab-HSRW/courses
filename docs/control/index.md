@@ -2,7 +2,7 @@
 
 ![Banner control. Two weels robot self-balancing in upright position](./banner-control.jpeg)
 
-Welcome to CI_5.02 Control Systems. This course is intended to provide theoretical and practical insights on control system.
+Welcome to ISE 8381 Control Engineering. This course is intended to provide theoretical and practical insights on control system.
 
 ## Teaching Team
 

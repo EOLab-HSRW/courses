@@ -22,11 +22,13 @@ Welcome to CI_5.02 Control Systems. This course is intended to provide theoretic
   - Labs/Exercises (15%): 22.5 h
   - Self-study (70%): 105 h
 
-## Session Structure
+## Session Structure and Format
 
-- Lecture (seminar format): 1 hour 30 minutes
+- Lecture (seminar format): 1 hour 30 minutes in person. Personal attendance on campus is highly recommended.
 - Assignment presentation (task description and objectives): 10–15 minutes
 - Laboratory session / assignment discussion: 40 minutes
+
+Note: sessions will not be recorded.
 
 ## Schedule Overview
 
@@ -39,15 +41,17 @@ The following schedule is subject to modifications.
 | W3   | 2025.10.24 | 1st/2nd-order time response; specs.                              | [Assignment 03](./assignments/03.md)<br/>[Lab 02](./labs/02.md)    |
 | W4   | 2025.10.31 | Stability & Routh–Hurwitz.                                       | [Assignment 04](./assignments/04.md)<br/>Discussion: Assignment 03 |
 | W5   | 2025.11.07 | Root locus & lead/lag via specs.                                 | [Lab 03](./labs/03.md)                                             |
-| W6   | 2025.11.14 | Frequency response, Bode/Nichols; margins & robustness (Part 1). | [Assignment 05](./assignments/05.md)<br/>Discussion: Assignment 04 |
-| W7   | 2025.11.21 | Frequency response, Bode/Nichols; margins & robustness (Part 2). | Discussion: Assignment 05                                          |
+| W6*  | 2025.11.14 | Frequency response, Bode/Nichols; margins & robustness (Part 1). | [Assignment 05](./assignments/05.md)<br/>Discussion: Assignment 04 |
+| W7*  | 2025.11.21 | Frequency response, Bode/Nichols; margins & robustness (Part 2). | Discussion: Assignment 05                                          |
 | W8   | 2025.11.28 | State-space models; time response.                               | [Assignment 06](./assignments/06.md)                               |
 | W9   | 2025.12.05 | Controllability/observability; minimal realization.              | Discussion: Assignment 06                                          |
 | W10  | 2025.12.12 | State-feedback (pole placement) + integral action.               | [Assignment 07](./assignments/07.md)                               |
-| W11  | 2025.12.19 | Observers; separation principle.                                 | [Assignment 08](./assignments/08.md)                               |
-| W12  | 2026.01.09 | Sampling & discrete-time models (ZOH, z-domain).                 |                                                                    |
+| W11  | 2025.12.19 | Observers; separation principle.                                 | [Assignment 08](./assignments/08.md)<br/>Discussion: Assignment 07 |
+| W12  | 2026.01.09 | Sampling & discrete-time models (ZOH, z-domain).                 | Discussion: Assignment 08                                          |
 | W13  | 2026.01.16 | Digital design (discrete PID, RL/Bode in z).                     | [Assignment 09](./assignments/09.md)<br/>[Lab 04](./labs/04.md)    |
 | W14  |            | Final project demo.                                              |                                                                    |
+
+*: Harley will not be available.
 
 ## Assessment & Grading
 

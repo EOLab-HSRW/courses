@@ -1,16 +1,15 @@
 # Control Engineering CI_5.02
 
-[Draft]
+![Banner control. Two weels robot self-balancing in upright position](./banner-control.jpeg)
 
-## Course Information
+Welcome to CI_5.02 Control Systems. This course is intended to provide theoretical and practical insights on control system.
 
-### Teaching Team (TBD)
+## Teaching Team
 
-Prof. Dr. Rolf Becker.
+- [Prof. Dr.-Ing. Rolf Becker](https://www.hochschule-rhein-waal.de/en/user/7254)
+- [Harley Lara](https://www.hochschule-rhein-waal.de/de/user/9804)
 
-Harley Lara.
-
-### Description
+## Description
 
 - **Location & time**: Raum 02 02 510 (KaLi)
   - Lecture: 14:00
@@ -23,38 +22,64 @@ Harley Lara.
   - Labs/Exercises (15%): 22.5 h
   - Self-study (70%): 105 h
 
-### Schedule Overview
+## Session Structure
+
+- Lecture (seminar format): 1 hour 30 minutes
+- Assignment presentation (task description and objectives): 10–15 minutes
+- Laboratory session / assignment discussion: 40 minutes
+
+## Schedule Overview
 
 The following schedule is subject to modifications.
 
-| Week | Date          | Topic(s)                                                | Lecture Material |
-|------|---------------|---------------------------------------------------------|------------------|
-| W1–2 | 2025.10.10/17 | Foundamental and system modeling (LTI, linearization).  |                  |
-| W3   | 2025.10.24    | 1st/2nd-order time response; specs.                     |                  |
-| W4   | 2025.10.31    | Stability & Routh–Hurwitz.                              |                  |
-| W5   | 2025.11.07    | Root locus & lead/lag via specs.                        |                  |
-| W6–7 | 2025.11.14/21 | Frequency response, Bode/Nichols; margins & robustness. |                  |
-| W8   | 2025.11.28    | State-space models; time response.                      |                  |
-| W9   | 2025.12.05    | Controllability/observability; minimal realization.     |                  |
-| W10  | 2025.12.12    | State-feedback (pole placement) + integral action.      |                  |
-| W11  | 2025.12.19    | Observers; separation principle.                        |                  |
-| W12  | 2026.01.09    | Sampling & discrete-time models (ZOH, z-domain).        |                  |
-| W13  | 2026.01.16    | Digital design (discrete PID, RL/Bode in z).            |                  |
-| W14  |               | Final project demo.                                 |                  |
+| Week | Date       | Topic(s)                                                         | Session Material                                                   |
+|------|------------|------------------------------------------------------------------|--------------------------------------------------------------------|
+| W1   | 2025.10.10 | Foundamental and system modeling (Part 1).                       | [Assignment 01](./assignments/01.md)<br/>[Lab 01](./labs/01.md)    |
+| W2   | 2025.10.17 | Foundamental and system modeling (Part 2).                       | [Assignment 02](./assignments/02.md)<br/>Discussion: Assignment 01 |
+| W3   | 2025.10.24 | 1st/2nd-order time response; specs.                              | [Assignment 03](./assignments/03.md)<br/>[Lab 02](./labs/02.md)    |
+| W4   | 2025.10.31 | Stability & Routh–Hurwitz.                                       | [Assignment 04](./assignments/04.md)<br/>Discussion: Assignment 03 |
+| W5   | 2025.11.07 | Root locus & lead/lag via specs.                                 | [Lab 03](./labs/03.md)                                             |
+| W6   | 2025.11.14 | Frequency response, Bode/Nichols; margins & robustness (Part 1). | [Assignment 05](./assignments/05.md)<br/>Discussion: Assignment 04 |
+| W7   | 2025.11.21 | Frequency response, Bode/Nichols; margins & robustness (Part 2). | Discussion: Assignment 05                                          |
+| W8   | 2025.11.28 | State-space models; time response.                               | [Assignment 06](./assignments/06.md)                               |
+| W9   | 2025.12.05 | Controllability/observability; minimal realization.              | Discussion: Assignment 06                                          |
+| W10  | 2025.12.12 | State-feedback (pole placement) + integral action.               | [Assignment 07](./assignments/07.md)                               |
+| W11  | 2025.12.19 | Observers; separation principle.                                 | [Assignment 08](./assignments/08.md)                               |
+| W12  | 2026.01.09 | Sampling & discrete-time models (ZOH, z-domain).                 |                                                                    |
+| W13  | 2026.01.16 | Digital design (discrete PID, RL/Bode in z).                     | [Assignment 09](./assignments/09.md)<br/>[Lab 04](./labs/04.md)    |
+| W14  |            | Final project demo.                                              |                                                                    |
 
-## Assessment & Grading (TBD)
+## Assessment & Grading
+
+This course emphasizes learning through practice and transparent evaluation. While certain components are completed individually to help you consolidate knowledge first-hand, discussion with peers, comparing approaches, troubleshooting, and sharing insights is strongly encouraged. Labs and assignments are primarily **formative**: they provide low-stakes opportunities to check your understanding, receive feedback, and build momentum toward the **summative component**, the final project.
 
 ### Labs
 
-Labs are the way to acquire practical skills that will help you complete the assignments and the final project.
+**When & where**: Immediately after each lecture, in situ (on-site).
 
-### Assigments
+**Format**: Live tutorial with guided, hands-on exercises with short, focused demos followed by step-by-step activities that form the baseline for tackling the assignment.
 
-The assignments are designed to help you progress toward the final project.
+**Purpose**: Equip you with practical tools to complete the assignments and, ultimately, the final project.
+
+**Execution format**: Individual.
+
+**Assessment**: Not graded.
+
+### Assignments
+
+**When & where**: Released alongside the relevant lectures/labs; complete at your own pace. A dedicated review session will be held in situ to address common questions and walk through approaches of your fellow classmates.
+
+**Format**: A mix of practical and theoretical tasks with supporting resources.
+
+**Purpose**: Build progressively on the labs and move you toward the final project; completing each assignment is a step toward the final deliverable.
+
+**Execution format**: Individual.
+
+**Assessment**: Not graded.
 
 ### Final Project
 
-Self-balancing robot
+The final project consolidates the knowledge and skills from the course into a coherent, real-world-style deliverable. For the full project description see: [Final Project](./final-project.md)
 
 ## Communication Channels & Recommendations
 
@@ -84,6 +109,16 @@ Room 02.02.510 (IoT Lab) will be available for use throughout the semester.
 **Loan Policy**: Electronic components and some accessories may be borrowed for home use. To arrange this, please contact a member of the [teaching team](#teaching-team).
 
 Any questions or unexpected situations should be reported to the lab staff immediately.
+
+## AI Policy
+
+Use of AI tools (e.g., large language models) is **permitted**, with the expectation of full transparency and academic integrity.
+
+Disclosure requirements (mandatory if you use an LLM):
+- Include a public link to the conversation/transcript you used.
+  - If a shareable link isn’t possible, attach a PDF export of the exchange.
+- State the tool/model name (e.g., “ChatGPT, model unknown/version as reported by the tool”), and the date/time of use.
+- Briefly describe what you used it for (e.g., outlining, proofreading, code scaffolding, debugging hints, literature search, etc.).
 
 ## Literature for the Course
 

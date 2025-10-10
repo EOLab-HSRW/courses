@@ -1,4 +1,4 @@
-# Control Engineering CI_5.02
+# Control Engineering ISE 8381 (Elective)
 
 ![Banner control. Two weels robot self-balancing in upright position](./banner-control.jpeg)
 
@@ -36,8 +36,8 @@ The following schedule is subject to modifications.
 
 | Week | Date       | Topic(s)                                                         | Session Material                                                   |
 |------|------------|------------------------------------------------------------------|--------------------------------------------------------------------|
-| W1   | 2025.10.10 | Foundamental and system modeling (Part 1).                       | [Assignment 01](./assignments/01.md)<br/>[Lab 01](./labs/01.md)    |
-| W2   | 2025.10.17 | Foundamental and system modeling (Part 2).                       | [Assignment 02](./assignments/02.md)<br/>Discussion: Assignment 01 |
+| W1   | 2025.10.10 | Fundamentals and system modeling (Part 1).                       | [Assignment 01](./assignments/01.md)<br/>[Lab 01](./labs/01.md)    |
+| W2   | 2025.10.17 | Fundamentals and system modeling (Part 2).                       | [Assignment 02](./assignments/02.md)<br/>Discussion: Assignment 01 |
 | W3   | 2025.10.24 | 1st/2nd-order time response; specs.                              | [Assignment 03](./assignments/03.md)<br/>[Lab 02](./labs/02.md)    |
 | W4   | 2025.10.31 | Stability & Routh–Hurwitz.                                       | [Assignment 04](./assignments/04.md)<br/>Discussion: Assignment 03 |
 | W5   | 2025.11.07 | Root locus & lead/lag via specs.                                 | [Lab 03](./labs/03.md)                                             |

@@ -95,7 +95,7 @@ The final project consolidates the knowledge and skills from the course into a c
 
 In case of technical issues:
 - Describe the problem, try to be provide with the steps to reproduce it.
-- Do not copy and paste massive logs (preferably less than 20 lines). If necessary attach a file with the complete logs.
+- Do not copy and paste massive logs (preferably less than 20 lines), if necessary attach a file with the complete logs.
 - Add screenshoot if necessary.
 
 ## Lab Access & Safety

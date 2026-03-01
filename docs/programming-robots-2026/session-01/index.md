@@ -6,7 +6,7 @@
 
 ## Who are we
 
-[Earth Observation Lab (EOLab)](eolab.de) is an educational, innovation laboratory dedicated to environmental science and technology at the Rhine-Waal University of Applied Sciences, Kamp-Lintfort campus. Founded in 2020 by [Dr. Rolf Becker](https://www.hochschule-rhein-waal.de/en/user/7254), it is a culmination of three labs (Formerly known as [Lab3](https://www.hochschule-rhein-waal.de/en/faculties/communication-and-environment/laboratories/lab3)) - DroneLab, IoTLab (Internet of Things Lab) and EOLab.
+[Earth Observation Lab (EOLab)](https://eolab.de) is an educational, innovation laboratory dedicated to environmental science and technology at the Rhine-Waal University of Applied Sciences, Kamp-Lintfort campus. Founded in 2020 by [Dr. Rolf Becker](https://www.hochschule-rhein-waal.de/en/user/7254), it is a culmination of three labs (Formerly known as [Lab3](https://www.hochschule-rhein-waal.de/en/faculties/communication-and-environment/laboratories/lab3)) - DroneLab, IoTLab (Internet of Things Lab) and EOLab.
 
 ## Why are we doing this
 

@@ -25,13 +25,14 @@ To make the most of this bootcamp, we assume participants arrive with a solid se
 
 \*\*Note: We can also do a brief OOP refresher, but only if necessary (for example, if gaps start to slow down the ROS-focused parts of the bootcamp).
 
-## What to Expect (and what not to expect)
+## What to Expect 
 
 By the end of the bootcamp, participants should feel confident programming robots with ROS. You will be able to implement basic robot functionalities and control behaviors in both simulation and (when available) on real hardware.
 
 More importantly, you should leave with a solid understanding of ROS concepts and workflow, enough to independently navigate documentation, read source code, and make effective use of external resources when working with ROS-based robots.
 
-**What not to expect**:
+## What Not to Expect
+
 Video recordings of the sessions. This is intentional, please see the section [Intended Approach (Methodology)](#intended-approach-methodology) for the rationale and how session notes are provided instead.
 
 A full "build a robot from scratch" experience. Developing a complete robot system; mechanical design, electronics, hardware integration, extensive testing, reliability engineering, and long-term iteration, is a substantially larger undertaking than can be covered within the bootcamp's time constraints. The bootcamp focuses on giving you the ROS foundation and practical workflow you need to contribute to such projects afterward.

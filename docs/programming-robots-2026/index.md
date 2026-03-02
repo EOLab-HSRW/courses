@@ -29,13 +29,13 @@ sidebar_position: 1
 
 ## Schedule Overview
 
-| Session | Date       | Topic Topics                                                                         | Session Materials         |
-|---------|------------|--------------------------------------------------------------------------------------|---------------------------|
-| S1      | 2026.03.02 | General information about the Bootcamp and introduction to ROS                       | [Session 1](./session-01) |
-| S2      | 2026.03.04 | - ROS nodes<br/>- ROS interfaces<br/>- ROS Topics                                    | TBA                       |
-| S3      | 2026.03.04 | - ROS Node arguments<br/>- QoS<br/>- Services<br/>- Actions                          | TBA                       |
-| S4      | 2026.03.05 | - Launch System<br/>- Visualization tools (RVIZ and others)<br/>- Simulator (Gazebo) | TBA                       |
-| S5      | 2026.03.06 | TBA                                                                                  | TBA                       |
+| Session | Date       | Topic Topics                                                                                                 | Session Materials         |
+|---------|------------|--------------------------------------------------------------------------------------------------------------|---------------------------|
+| S1      | 2026.03.02 | General information about the Bootcamp<br/>- Introduction to ROS<br/>- Workspace<br/>- Managing ROS packages | [Session 1](./session-01) |
+| S2      | 2026.03.04 | - ROS nodes<br/>- ROS interfaces<br/>- ROS Topics                                                            | TBA                       |
+| S3      | 2026.03.04 | - ROS Node arguments<br/>- QoS<br/>- Services<br/>- Actions                                                  | TBA                       |
+| S4      | 2026.03.05 | - Launch System<br/>- Visualization tools (RVIZ and others)<br/>- Simulator (Gazebo)                         | TBA                       |
+| S5      | 2026.03.06 | TBA                                                                                                          | TBA                       |
 
 ## Prerequisites & Setup
 

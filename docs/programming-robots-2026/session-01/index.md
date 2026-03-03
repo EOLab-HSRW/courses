@@ -60,7 +60,7 @@ After the session (for example, at home), you should be able to reproduce everyt
 Small activity: Write **on a piece of paper** the schema/format you would propose to encode, transport or store the readings of a 2D LiDAR sensor, see [example image of the operation mode](https://robotcopper.github.io/config/assets/images/Synthetic2DLidarScanGenerator/plot.png).
 
 
-TBA
+[ROS Introduction](https://robotics.harleylara.com/en/ros2/intro)
 
 ## Install ROS
 
@@ -68,8 +68,8 @@ TBA
 
 ## ROS Workspace
 
-TBA
+[ROS Workspace](https://robotics.harleylara.com/en/ros2/ws)
 
 ## ROS Packages
 
-TBA
+[ROS Packages](https://robotics.harleylara.com/en/ros2/pkgs)

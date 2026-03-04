@@ -1,4 +1,4 @@
-# Programming Robots - Session 1
+# Programming Robots - Session 2
 
 ## Nodes
 

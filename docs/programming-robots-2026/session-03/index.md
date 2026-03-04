@@ -12,14 +12,32 @@ To control the linear and angular velocities make sure to publish in the topic: 
 
 Your task is to write a publisher that drive the turtle in a way that draw a circle.
 
-## QoS
-
-TBA
-
 ## Services
 
 TBA
 
+## Task - Turtle Controller
+
+Create a ROS 2 node using python that **publishes velocity commands** to turtlesim and exposes **two services** to control motion.
+
+Requeriments:
+- Node name: `turtle_controller`
+- Publisher:
+  - topics: `/turtle1/cmd_vel`
+  - type: `geometry_msgs/msg/Twist`
+  - rate: 10 Hz
+
+Services:
+- `/start`: When called enable motion.
+  - type: `std_srvs/srv/Trigger`
+- `/stop`: When called disable motion.
+  - type: `std_srvs/srv/Trigger`
+
 ## Actions
 
 TBA
+
+## QoS
+
+TBA
+

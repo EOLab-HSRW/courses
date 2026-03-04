@@ -22,16 +22,15 @@ Create a ROS 2 node using python that **publishes velocity commands** to turtles
 
 Requeriments:
 - Node name: `turtle_controller`
-- Publisher:
-  - topics: `/turtle1/cmd_vel`
-  - type: `geometry_msgs/msg/Twist`
-  - rate: 10 Hz
-
-Services:
-- `/start`: When called enable motion.
-  - type: `std_srvs/srv/Trigger`
-- `/stop`: When called disable motion.
-  - type: `std_srvs/srv/Trigger`
+  - Publisher:
+    - topics: `/turtle1/cmd_vel`
+    - type: `geometry_msgs/msg/Twist`
+    - rate: 10 Hz
+  - Services:
+    - `/start`: When called enable motion.
+      - type: `std_srvs/srv/Trigger`
+    - `/stop`: When called disable motion.
+      - type: `std_srvs/srv/Trigger`
 
 ## Actions
 

@@ -1,4 +1,4 @@
-# Programming Robots - Session 1
+# Session 1
 
 ## Survey
 

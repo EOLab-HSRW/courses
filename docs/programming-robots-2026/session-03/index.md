@@ -1,4 +1,4 @@
-# Programming Robots - Session 3
+# Session 3
 
 ## Warm-up Excercise
 
@@ -36,7 +36,8 @@ Requeriments:
 
 [ROS Actions](https://robotics.harleylara.com/en/ros2/actions-)
 
-## QoS
+## ROS Python Client (rclpy) Documentation
 
-[ROS Services](https://robotics.harleylara.com/en/ros2/qos)
+You can find the official python client documentation, [rclpy](https://docs.ros.org/en/rolling/p/rclpy/#) to get all the information about the available functions that you can perform with the pythonn client.
 
+Keep in mind the the client documentation pointing to the `rolling` distribution (the latest dev branch) and some functions may not be implemented in your distribution (e.g. Humble).

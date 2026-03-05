@@ -34,7 +34,7 @@ sidebar_position: 1
 | S1      | 2026.03.02 | - General information about the Bootcamp<br/>- Introduction to ROS<br/>- Workspace<br/>- Managing ROS packages                                   | [Session 1](./session-01) |
 | S2      | 2026.03.04 | - ROS nodes<br/>- ROS interfaces<br/>- ROS Topics                                                                                                | [Session 2](./session-02) |
 | S3      | 2026.03.04 | - Warm-up task<br/>- Services<br/>- Actions<br/>                                                                                                 | [Session 3](./session-03) |
-| S4      | 2026.03.05 | - QoS<br/>- Arguments, ROS Arguments and Node Parameter<br/>- Launch System<br/>- Visualization tools (RVIZ and others)<br/>- Simulator (Gazebo) | TBA                       |
+| S4      | 2026.03.05 | - QoS<br/>- Arguments, ROS Arguments and Node Parameter<br/>- Launch System<br/>- Visualization tools (RVIZ and others)<br/>- Simulator (Gazebo) | [Session 4](./session-04) |
 | S5      | 2026.03.06 | TBA                                                                                                                                              | TBA                       |
 
 ## Prerequisites & Setup

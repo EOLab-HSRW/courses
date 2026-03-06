@@ -10,4 +10,14 @@ ros2 run turtlesim turtlesim_node
 
 Now we want to use the node `teleop_twist_keyboard` from the package [`teleop_twist_keyboard`](https://index.ros.org/p/teleop_twist_keyboard/#humble). **Your task** is: Using `teleop_twist_keyboard` move the turtle using your keyboard.
 
+## Launch System
 
+TBA
+
+## Visualization tools (RVIZ and others)
+
+TBA
+
+## Simulator (Gazebo)
+
+TBA

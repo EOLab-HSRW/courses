@@ -40,3 +40,7 @@ sudo apt-get install ros-humble-gz-harmonic
 ```
 
 Source: [Binary Installation on Ubuntu](https://gazebosim.org/docs/harmonic/install_ubuntu/#binary-installation-on-ubuntu)
+
+## External Resources - Book and more
+
+[Robotics - Books Bookmarks](https://bookmarks.harleylara.com/subjects/#robotics)

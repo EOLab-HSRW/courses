@@ -21,3 +21,9 @@ TBA
 ## Simulator (Gazebo)
 
 TBA
+
+## WSL People Situation
+
+## Gz Harmonic with Humble
+
+[Binary Installation on Ubuntu](https://gazebosim.org/docs/harmonic/install_ubuntu/#binary-installation-on-ubuntu)

@@ -42,7 +42,7 @@ sidebar_position: 1
 - Python: Basic Python skills, including basic OOP concepts. If you’d like a refresher, see [Think Python (3rd Edition) by Allen B. Downey](https://allendowney.github.io/ThinkPython/).
 - Operating system requirement: [Ubuntu 22.04 Desktop](https://releases.ubuntu.com/jammy/)(required for the exercises and simulator).
   - Recommended: Native Ubuntu installation (dual-boot is possible but can be impractical for daily use over long term).
-  - Windows option: You may use Windows 11 (22H2 or newer) with [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) running Ubuntu 22.04 (required to properly run and render Ubuntu graphics applications such as the simulator) but your need to expect low performance in simulation.
+  - Windows option: You may use Windows 11 (22H2 or newer) with [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) running Ubuntu 22.04 (required to properly run and render Ubuntu graphics applications such as the simulator) but your need to ⚠️ expect extremely low performance in simulation ⚠️.
   - Virtual machine: Not recommended due to common graphics driver/simulation issues. If you still choose to use one, [VMware Workstation Pro](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion) (free for personal, non-commercial use) is the suggested option.
   - macOS: not supported.
 

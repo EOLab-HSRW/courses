@@ -17,7 +17,9 @@ TBA
 
 ## Visualization tools (RVIZ and others)
 
-TBA
+For the RViz part of the session, I ended up giving a more direct, hands-on explanation of the most useful panels in RViz. The main reason is that I’m not planning to write separate session notes for that section, at least not myself. Honestly, the RViz User Guide already does an excellent job of explaining how it works, so writing additional notes for RViz would mostly be redundant.
+
+So, if you want to go back over that part of the session, just check the [RViz User Guide](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
 
 - [PlotJuggler](https://github.com/facontidavide/PlotJuggler)
 - [Foxglove](https://foxglove.dev/)

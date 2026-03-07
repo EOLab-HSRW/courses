@@ -13,16 +13,18 @@ Now we want to use the node `teleop_twist_keyboard` from the package [`teleop_tw
 ## Launch System
 
 TBA
+- [Intrinsic Flowstate](https://www.intrinsic.ai/flowstate) a visual flow diagram to build behaviors.
 - [Intrinsic Product Keynote - May 15, 2023](https://www.youtube.com/watch?v=QtSShST58io)
 
 ## Visualization tools (RVIZ and others)
 
 For the RViz part of the session, I ended up giving a more direct, hands-on explanation of the most useful panels in RViz. The main reason is that I’m not planning to write separate session notes for that section, at least not myself. Honestly, the RViz User Guide already does an excellent job of explaining how it works, so writing additional notes for RViz would mostly be redundant.
 
-So, if you want to go back over that part of the session, just check the [RViz User Guide](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
+So, if you want to go back over that part of the session, just check the [RViz User Guide](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html).
 
 - [PlotJuggler](https://github.com/facontidavide/PlotJuggler)
 - [Foxglove](https://foxglove.dev/)
+- [Rerun](https://rerun.io/). I forgot to mention this one in the session.
 
 ## Simulator (Gazebo)
 

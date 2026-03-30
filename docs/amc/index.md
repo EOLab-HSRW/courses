@@ -35,22 +35,22 @@ Note: sessions will not be recorded.
 
 Any revisions to the schedule will be communicated through the official channels, namely Moodle, email, or in-class announcements.
 
-| Week | Date       | Topic(s)                                                         | Material                                                           |
-|------|------------|------------------------------------------------------------------|--------------------------------------------------------------------|
-| W1   | 2026.04.?? | Fundamentals and system modeling (Part 1).                       | [Assignment 01](./assignments/01.md)<br/>[Lab 01](./labs/01.md)    |
-| W2   | 2026.04.?? | Fundamentals and system modeling (Part 2).                       | [Assignment 02](./assignments/02.md)<br/>Discussion: Assignment 01 |
-| W3   | 2026.04.?? | 1st/2nd-order time response; specs.                              | [Assignment 03](./assignments/03.md)<br/>[Lab 02](./labs/02.md)    |
-| W4   | 2026.04.?? | Stability & Routh–Hurwitz.                                       | [Assignment 04](./assignments/04.md)<br/>Discussion: Assignment 03 |
-| W5   | 2026.05.?? | Root locus & lead/lag via specs.                                 | [Lab 03](./labs/03.md)                                             |
-| W6   | 2026.05.?? | Frequency response, Bode/Nichols; margins & robustness (Part 1). | [Assignment 05](./assignments/05.md)<br/>Discussion: Assignment 04 |
-| W7   | 2026.05.?? | Frequency response, Bode/Nichols; margins & robustness (Part 2). | Discussion: Assignment 05                                          |
-| W8   | 2026.05.?? | State-space models; time response.                               | [Assignment 06](./assignments/06.md)                               |
-| W9   | 2026.06.?? | Controllability/observability; minimal realization.              | Discussion: Assignment 06                                          |
-| W10  | 2026.06.?? | State-feedback (pole placement) + integral action.               | [Assignment 07](./assignments/07.md)                               |
-| W11  | 2026.06.?? | Observers; separation principle.                                 | [Assignment 08](./assignments/08.md)<br/>Discussion: Assignment 07 |
-| W12  | 2026.06.?? | Sampling & discrete-time models (ZOH, z-domain).                 | Discussion: Assignment 08                                          |
-| W13  | 2026.07.?? | Digital design (discrete PID, RL/Bode in z).                     | [Assignment 09](./assignments/09.md)<br/>[Lab 04](./labs/04.md)    |
-| W14  |            | Final project demo.                                              |                                                                    |
+| Week | Date       | Topic(s)                                                         | Material |
+|------|------------|------------------------------------------------------------------|----------|
+| W1   | 2026.04.?? | Fundamentals and system modeling (Part 1).                       |          |
+| W2   | 2026.04.?? | Fundamentals and system modeling (Part 2).                       |          |
+| W3   | 2026.04.?? | 1st/2nd-order time response; specs.                              |          |
+| W4   | 2026.04.?? | Stability & Routh–Hurwitz.                                       |          |
+| W5   | 2026.05.?? | Root locus & lead/lag via specs.                                 |          |
+| W6   | 2026.05.?? | Frequency response, Bode/Nichols; margins & robustness (Part 1). |          |
+| W7   | 2026.05.?? | Frequency response, Bode/Nichols; margins & robustness (Part 2). |          |
+| W8   | 2026.05.?? | State-space models; time response.                               |          |
+| W9   | 2026.06.?? | Controllability/observability; minimal realization.              |          |
+| W10  | 2026.06.?? | State-feedback (pole placement) + integral action.               |          |
+| W11  | 2026.06.?? | Observers; separation principle.                                 |          |
+| W12  | 2026.06.?? | Sampling & discrete-time models (ZOH, z-domain).                 |          |
+| W13  | 2026.07.?? | Digital design (discrete PID, RL/Bode in z).                     |          |
+| W14  |            | Final project demo.                                              |          |
 
 ## Assessment & Grading
 

@@ -35,22 +35,22 @@ Note: sessions will not be recorded.
 
 Any revisions to the schedule will be communicated through the official channels, namely Moodle, email, or in-class announcements.
 
-| Week | Date       | Topic(s)                                                         | Material |
-|------|------------|------------------------------------------------------------------|----------|
-| W1   | 2026.04.?? | Fundamentals and system modeling (Part 1).                       |          |
-| W2   | 2026.04.?? | Fundamentals and system modeling (Part 2).                       |          |
-| W3   | 2026.04.?? | 1st/2nd-order time response; specs.                              |          |
-| W4   | 2026.04.?? | Stability & Routh–Hurwitz.                                       |          |
-| W5   | 2026.05.?? | Root locus & lead/lag via specs.                                 |          |
-| W6   | 2026.05.?? | Frequency response, Bode/Nichols; margins & robustness (Part 1). |          |
-| W7   | 2026.05.?? | Frequency response, Bode/Nichols; margins & robustness (Part 2). |          |
-| W8   | 2026.05.?? | State-space models; time response.                               |          |
-| W9   | 2026.06.?? | Controllability/observability; minimal realization.              |          |
-| W10  | 2026.06.?? | State-feedback (pole placement) + integral action.               |          |
-| W11  | 2026.06.?? | Observers; separation principle.                                 |          |
-| W12  | 2026.06.?? | Sampling & discrete-time models (ZOH, z-domain).                 |          |
-| W13  | 2026.07.?? | Digital design (discrete PID, RL/Bode in z).                     |          |
-| W14  |            | Final project demo.                                              |          |
+| Week | Date       | Topic(s)                                         | Material              |
+|------|------------|--------------------------------------------------|-----------------------|
+| W1   | 2026.04.14 | Introduction to applied measurement and control. | [lecture notes](./w1) |
+| W2   | 2026.04.21 |                                                  |                       |
+| W3   | 2026.04.28 |                                                  |                       |
+| W4   | 2026.05.05 |                                                  |                       |
+| W5   | 2026.05.12 |                                                  |                       |
+| W6   | 2026.05.19 |                                                  |                       |
+| W7   | 2026.05.26 |                                                  |                       |
+| W8   | 2026.05.?? |                                                  |                       |
+| W9   | 2026.06.?? |                                                  |                       |
+| W10  | 2026.06.?? |                                                  |                       |
+| W11  | 2026.06.?? |                                                  |                       |
+| W12  | 2026.06.?? |                                                  |                       |
+| W13  | 2026.07.?? |                                                  |                       |
+| W14  |            |                                                  |                       |
 
 ## Assessment & Grading
 

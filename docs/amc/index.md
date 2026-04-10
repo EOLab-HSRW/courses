@@ -35,22 +35,22 @@ Note: sessions will not be recorded.
 
 Any revisions to the schedule will be communicated through the official channels, namely Moodle, email, or in-class announcements.
 
-| Week | Date       | Topic(s)                                         | Material              |
-|------|------------|--------------------------------------------------|-----------------------|
-| W1   | 2026.04.14 | Introduction to applied measurement and control. | [lecture notes](./w1) |
-| W2   | 2026.04.21 |                                                  |                       |
-| W3   | 2026.04.28 |                                                  |                       |
-| W4   | 2026.05.05 |                                                  |                       |
-| W5   | 2026.05.12 |                                                  |                       |
-| W6   | 2026.05.19 |                                                  |                       |
-| W7   | 2026.05.26 |                                                  |                       |
-| W8   | 2026.05.?? |                                                  |                       |
-| W9   | 2026.06.?? |                                                  |                       |
-| W10  | 2026.06.?? |                                                  |                       |
-| W11  | 2026.06.?? |                                                  |                       |
-| W12  | 2026.06.?? |                                                  |                       |
-| W13  | 2026.07.?? |                                                  |                       |
-| W14  |            |                                                  |                       |
+| Week | Date       | Topic(s)                                                                               | Material              |
+|------|------------|----------------------------------------------------------------------------------------|-----------------------|
+| W1   | 2026.04.14 | Introduction to applied measurement and control.                                       | [lecture notes](./w1) |
+| W2   | 2026.04.21 | Sensors and Signals (part 1)                                                           |                       |
+| W3   | 2026.04.28 | Sensors and Signals (part 2)                                                           |                       |
+| W4   | 2026.05.05 | General principels of measurement. (regulators, voltage dividers, current measurement) |                       |
+| W5   | 2026.05.12 | Microcontrollers                                                                       |                       |
+| W6   | 2026.05.19 | Power sources and regulators                                                           |                       |
+| W7   | 2026.05.26 | Output devices and actuators                                                           |                       |
+| W8   | 2026.05.?? | Wired and Wireless communication                                                       |                       |
+| W9   | 2026.06.?? | Data processing and visualization                                                      |                       |
+| W10  | 2026.06.?? |                                                                                        |                       |
+| W11  | 2026.06.?? |                                                                                        |                       |
+| W12  | 2026.06.?? |                                                                                        |                       |
+| W13  | 2026.07.?? |                                                                                        |                       |
+| W14  |            |                                                                                        |                       |
 
 ## Assessment & Grading
 
@@ -116,22 +116,3 @@ Disclosure requirements (mandatory if you use an LLM):
 
 This site is a supplementary resource for the lecture. It does not replace Moodle, which remains the official platform for announcements, and submissions. These docs are intended to enhance the learning experience and make selected content openly and widely accessible.
 
-## Schedule Overview
-
-
-- Introduction to Measurement
-- Sensors and signals
-  - taxonomy of sensors
-  - Digital vs analog
-  - Logic levels
-  - Digital Communication
-    - I2C
-    - SPI
-    - 1-Wire
-    - UART
-- Microcontrollers
-  - variables
-  - if-else
-  - loops
-  - functions
-- Actuators

@@ -122,7 +122,7 @@ The final project is a group-based applied project in which students design, imp
 
 **Considerations in case of technical difficulties**: If you encounter technical difficulties, please use the Moodle discussion section as your primary communication channel, as both the problem and its solution may be beneficial to others in the course. When posting, please describe the issue clearly, indicate the steps needed to reproduce it where possible, avoid copy-pasting excessively long logs directly into the post, and include a screenshot if relevant.
 
-**Office hours**: for in-person communication or written email questions.
+**Consultation hours**: See the section [“Consultation hours”](https://moodle.hochschule-rhein-waal.de/course/section.php?id=375427) in Moodle for more details.
 
 ## Lab Access & Safety
 ---

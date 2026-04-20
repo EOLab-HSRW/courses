@@ -30,9 +30,9 @@ We do not explicitly verify whether you have passed these courses, but we do exp
 Due to the late start of the course, we need to find a way to accommodate both the lecture (L) and exercise (E) blocks within a time frame that allows them to take place continuously. From a methodological perspective, scheduling the lecture on Tuesdays and the exercises on Fridays was not the most effective option. Taking this into account, along with a few additional constraints, the most suitable solution was to organize longer sessions on Fridays. This arrangement was developed primarily for fourth-semester E&E students, while also aiming to work well for the broader group of attendees.
 
 **Structure**: To make effective use of the extended time slot from 08:15 to 15:30, we would keep the regular 1 hour and 30 minute block structure.
-- **Morning sessions** from 08:15 - 11:30, lecture block (L) would be followed by an exercise block (E).
+- **Morning sessions** from 08:15 - 11:30, lecture block (L) would be followed by an exercise block (E), with a 15 minute break in between.
 - Lunch  break from 11:30 to 12:15.
-- **Afternoon sessions** from 12:15 - 15:30, lecture block (L) would be followed by an exercise block (E).
+- **Afternoon sessions** from 12:15 - 15:30, lecture block (L) would be followed by an exercise block (E), with a 15 minute break in between.
 
 **Format**:
 - Lecture block: seminar format, personal attendance on campus is strongly recommended, especially for exercise and discussion sessions, as many activities involve guided practical work, equipment, and immediate feedback.

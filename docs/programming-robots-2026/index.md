@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Programming Robots - Bootcamp 2026
 
 ## Description

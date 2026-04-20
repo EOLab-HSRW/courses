@@ -142,14 +142,16 @@ Disclosure requirements (mandatory if you use an LLM):
 - State the tool/model name (e.g., “ChatGPT, model and version as reported by the tool”), and the date/time of use.
 - Briefly describe what you used it for (e.g., outlining, proofreading, code scaffolding, debugging hints, literature search, etc.).
 
-## Literature for the Course
+## Supplementary Reading
 ---
 
-- The AMC Mini-Handbook. Online resource.
+- Environment and Energy. (2026). Applied measurement and control: Mini-Handbook [Open educational resource] [courses.eolab.de/amc/handbook](https://courses.eolab.de/amc/handbook) Hochschule Rhein-Waal, Faculty of Communication and Environment.
 
-add two books for python. Python for everyone and Python Data Science Handbook
+- Severance, C. R. (2016). Python for everybody: Exploring data using Python 3. [Open educational resource] [www.py4e.com/book](https://www.py4e.com/book)
 
- [Introduction to Digital Circuits. Chapter 1. Electrical Foundations](https://strumpen.net/dc/build/html/electricalfoundations/electricalfoundations.html)
+- VanderPlas, J. (2016). Python data science handbook. [Open educational resource] [jakevdp.github.io/PythonDataScienceHandbook/](https://jakevdp.github.io/PythonDataScienceHandbook)
+
+- Strumpen, V. (2015). Introduction to digital circuits: Chapter 1, Electrical foundations. [Open educational resource] [strumpen.net](https://strumpen.net/dc/build/html/electricalfoundations/electricalfoundations.html).
 
 ## Disclaimer
 ---

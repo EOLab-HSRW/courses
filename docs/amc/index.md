@@ -134,9 +134,9 @@ The final project is a group-based applied project in which students design, imp
 ## AI Policy
 ---
 
-Use of AI tools (e.g., large language models) is **permitted**, with the expectation of full transparency and [academic integrity](https://en.wikipedia.org/wiki/Academic_integrity).
+Use of AI tools (e.g., large language models [LLM]) is **permitted**, with the expectation of full transparency and [academic integrity](https://en.wikipedia.org/wiki/Academic_integrity).
 
-Disclosure requirements (mandatory if you use an LLM):
+Disclosure requirements (mandatory if you use an [LLM]):
 - Include a public link to the conversation/transcript you used.
   - If a shareable link isn’t possible, attach a PDF export of the exchange.
 - State the tool/model name (e.g., “ChatGPT, model and version as reported by the tool”), and the date/time of use.

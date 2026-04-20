@@ -21,7 +21,7 @@ We do not explicitly verify whether you have passed these courses, but we do exp
 - **Duration**: 1 semester
 - **Total Workload (semester)**: 150 h, distributed as follows:
   - Lecture (15%): 22.5 h
-  - Labs/Exercises (15%): 22.5 h
+  - Exercises (15%): 22.5 h
   - Self-study (70%): 105 h
 
 ## Session Structure and Format
@@ -89,7 +89,7 @@ This course emphasizes practice-based learning. Some components are completed in
 
 **Format**: A combination of practical and theoretical tasks, supported by relevant internal (course-specific) and external resources.
 
-**Purpose**: To extend and deepen the work initiated in the labs, while preparing you for the demands of the final project.
+**Purpose**: To extend and deepen the work initiated in the exercises, while preparing you for the demands of the final project.
 
 **Execution format**: Individual.
 
@@ -101,7 +101,7 @@ This course emphasizes practice-based learning. Some components are completed in
 
 **When and where**:
 
-**Format**: In-person practical tasks, based on exercises and assignments. No internet connection, but your labs and assignments submissions are gonna be available for you as support material (only if they were submitted on time in Moodle).
+**Format**: In-person practical tasks, based on exercises and assignments. No internet connection, but your exercises and assignments submissions are gonna be available for you as support material (only if they were submitted on time in Moodle).
 
 **Purpose**: consolidates the knowledge and understanding of all relevant topic to be able to perform and contribute to the final project.
 

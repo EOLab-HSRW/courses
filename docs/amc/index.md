@@ -49,16 +49,17 @@ Note: sessions will not be recorded.
 
 Any revisions to the schedule will be communicated through the official channels, namely Moodle, email, or in-class.
 
-| Date       | Time          | Location  | Topics                                                                                         | Materials |
-|------------|---------------|-----------|------------------------------------------------------------------------------------------------|-----------|
-| 2026.04.21 | 14:00 - 15:30 | 03 02 130 | Introduction to applied measurement and control.                                               |           |
-| 2026.05.15 | 08:15 - 15:30 | 03 02 130 | General principles of electrical measurements.<br/>Sensors and Signals (part 1)                |           |
-| 2026.05.29 | 08:15 - 15:30 | 03 02 130 | Sensors and Signals (part 2). <br/> Power sources and regulators.                              |           |
-| 2026.06.05 | 08:15 - 15:30 | 03 02 130 | Introduction to microcontrollers and single-board-computers.<br/>Output devices and actuators. |           |
-| 2026.06.19 | 08:15 - 15:30 | 03 02 130 | Wired and Wireless communication. <br/>Provisional date for the midterm (to be confirmed).     |           |
-| 2026.07.03 | 08:15 - 15:30 | 03 02 130 | Data processing and visualization.<br/>Cloud, Database and Data loggers                        |           |
-| 2026.07.10 | 08:15 - 15:30 | 03 02 130 | Project development and discussion sessions.                                                   |           |
-| 2026.07.17 | 08:15 - 15:30 | 03 02 130 | Project development and discussion sessions.                                                   |           |
+| Date       | Time                            | Location  | Topics                                                                                                     | Materials |
+|------------|---------------------------------|-----------|------------------------------------------------------------------------------------------------------------|-----------|
+| 2026.04.21 | 14:00 - 15:30                   | 03 02 130 | Introduction to applied measurement and control.                                                           |           |
+| 2026.05.15 | 08:15 - 15:30                   | 03 02 130 | General principles of electrical measurements.<br/>Sensors and Signals (part 1)                            |           |
+| 2026.05.29 | 08:15 - 15:30                   | 03 02 130 | Sensors and Signals (part 2). <br/> Power sources and regulators.                                          |           |
+| 2026.06.05 | 08:15 - 15:30                   | 03 02 130 | Introduction to microcontrollers and single-board-computers.<br/>Output devices and actuators.             |           |
+| 2026.06.19 | 08:15 - 15:30                   | 03 02 130 | Wired and Wireless communication. <br/>Provisional date for the **project work part 1** (to be confirmed). |           |
+| 2026.07.03 | 08:15 - 15:30                   | 03 02 130 | Data processing and visualization.<br/>Cloud, Database and Data loggers                                    |           |
+| 2026.07.10 | 08:15 - 15:30                   | 03 02 130 | Project development and discussion sessions.                                                               |           |
+| 2026.07.17 | 08:15 - 15:30                   | 03 02 130 | Project development and discussion sessions.                                                               |           |
+| 2026.08.07 | 08:15 - 11:30 (to be confirmed) | 03 02 130 | Project presentation and demonstrations.                                                                   |           |
 
 ## Assessment & Grading
 ---
@@ -67,9 +68,12 @@ This course emphasizes practice-based learning. Some components are completed in
 
 ### Grading System
 
-**Midterm Exam (30% of the module grade)**: A practical exam focused on solving problems related to previous exercises. This is an open-book exam, and the only permitted materials are your submitted exercises and assignments.
+*In accordance with the examination methodology currently approved by the Examination Board for the module 8142 Applied Measurement and Control, the assessment type for this module is **project work** defined as follows.*
 
-**Project (70% of the module grade)**: The project includes (a) functional prototype, (b) report, and (c) short presentation. The project mark is based on **100 points in total**, divided into **60 points for the group project** and **40 points for the individual contribution**.
+**Project Work, Part 1 (30% of the module grade)**: 
+An individual practical project work focused on solving problems related to the course exercises. This is an open-book task conducted in situ within a fixed time frame of **1 hour 30 minutes**, and the **only permitted materials** are the student’s **submitted exercises and assignments**.
+
+**Project Work, Part 2 (70% of the module grade)**: A project comprising (a) a functional prototype, (b) a written report, and (c) a short presentation. The overall mark is based on 100 points, allocated as 60 points for the group project and 40 points for the individual contribution.
 
 ### Exercises
 
@@ -99,21 +103,32 @@ This course emphasizes practice-based learning. Some components are completed in
 
 **Assessment**: Not graded. General feedback will be provided during the exercise discussion. Given the number of students in the course, it is difficult to provide individual written (human) feedback for each learner.
 
-### Midterm
+### Project Work, Part 1
 
-**When and where**:
+**When and where**: To be announced.
 
-**Format**: In-person practical tasks, based on exercises and assignments. No internet connection, but your exercises and assignments submissions are gonna be available for you as support material (only if they were submitted on time in Moodle).
+**Format**: Project Work, Part 1 is an in-person, individual practical assessment conducted in situ within a fixed duration of 1 hour and 30 minutes. The tasks are based on previous exercises and assignments. The assessment is open-book; however, no internet access will be available. Students may use only their own exercises and assignment submissions that were submitted on time in Moodle.
 
-**Purpose**: consolidates the knowledge and understanding of all relevant topic to be able to perform and contribute to the final project.
+**Purpose**: This part is intended to consolidate students’ knowledge and understanding of the relevant course topics and to prepare them to contribute effectively to Project Work, Part 2.
 
 **Execution format**: Individual.
 
-**Assessment**: 30% of the final graded.
+**Assessment**: 30% of the final module grade, with a maximum of 30 points.
 
-### Final Project
+### Project Work, Part 2
 
-The final project is a group-based applied project in which students design, implement, test, and document a small measurement-and-control system. The project is intended to integrate course topics in a practical context and will include both group-based and individual assessment elements.
+Project Work, Part 2 is a **group-based** applied project in which students design, implement, test, and document a small measurement-and-control system. It is intended to integrate the course topics in a practical setting and includes both group-based and individual assessment components.
+
+**Execution format**: Group work, with individual assessment of each student’s contribution.
+
+**Components**:
+- (a) a functional prototype,
+- (b) a written report, and
+- (c) a short presentation.
+
+**Assessment**: 70% of the final module grade, with a maximum of 70 points, consisting of:
+- 45 points for the group project, and
+- 25 points for the individual contribution.
 
 ## Communication Channels & Recommendations
 ---

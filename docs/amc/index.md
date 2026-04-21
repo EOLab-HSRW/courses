@@ -2,6 +2,8 @@
 
 The course does not assume advanced prior experience in embedded systems or electronics design. Instead, it provides a practical framework for combining concepts from physics, scientific programming, statistics, and environmental/energy applications.
 
+*The expected reading time of this page is approximately 15 minutes*.
+
 ## Requirements
 ---
 

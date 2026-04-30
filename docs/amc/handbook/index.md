@@ -4,14 +4,14 @@ sidebar_position: 999
 
 # The AMC Mini-Handbook
 
-Outline:
-- Introducing the Core-kit, capabilities and limitations (lab1)
-- How to use the breadboard (lab1)
-- How to use the multimeter (lab1)
-- Disambiguations in terminology
-- whirlwind tour python with focus on parts that help to make sense of the MicroPython API (labP)
-- Complete intro to MicroPython (labP)
-- Reference guide for [our Microcontroller - ESP32](https://docs.micropython.org/en/latest/esp32/quickref.html) (labP)
+Table of Content:
+- [AMC Core Kit](./000-core-kit.md)
+- [Breadboard](./001-breadboard.md): How to make electrical connections using the breadboard.
+- [Multimeter](./002-multimeter.md): How to make electrical measurements.
+- [Disambiguations](./003-disambiguations.md): Common terminology confusion.
+- [Python](./004-python.md): Quick refresher on Python programming language. with focus on parts that help to make sense of the MicroPython API (labP)
+- [MicroPython](./005-micropython.md): Complete Introduction to MicroPython (Generic, applicable to ESP32 but also other boards).
+  - Reference guide for [our Microcontroller - ESP32](https://docs.micropython.org/en/latest/esp32/quickref.html) (labP)
 - Sensors and signals
   - taxonomy of sensors
   - Digital vs analog

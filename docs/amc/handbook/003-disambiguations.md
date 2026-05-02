@@ -1,11 +1,11 @@
 # Disambiguations
 
+![Example Board Disambiguations - ESP32](./disambiguations/board-composition.png)
+
 - Microcontroller Unit (MCU)
 - System on Chip (SoC)
 - Module
 - Development Kit (DevKit), Development Boards (DevBoard)
-
-![demo](https://esp32.implrust.com/esp32-intro/images/devkit-module-soc.png)
 
 
 ## Terminology
@@ -17,7 +17,4 @@
 - Microcontroller?? not official definition by standarization body ?
 - closes: ISO/IEC TR 5891:2024
 
-
-## Inside
-
-[Block Diagram - ESP32 Series Datasheet](https://www.mouser.com/catalog/specsheets/Espressif%20Systems_01292021_esp32.pdf#c)
+## MicroPython vs Arduino

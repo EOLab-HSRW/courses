@@ -1,6 +1,6 @@
-# Multimeter
+# Measurements and Multimeter
 
-![Multimeter](./multimeter/multimeter.png)
+![Multimeter](./measurements/multimeter.png)
 
 https://www.fluke.com/en-us/learn/online-courses/digital-multimeter-basics-online-course
 

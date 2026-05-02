@@ -7,7 +7,7 @@ sidebar_position: 999
 Table of Content:
 - [AMC Core Kit](./000-core-kit.md)
 - [Breadboard](./001-breadboard.md): How to make electrical connections using the breadboard.
-- [Multimeter](./002-multimeter.md): How to make electrical measurements.
+- [Measurements and Multimeter](./002-measurements.md): How to make electrical measurements and use the multimeter.
 - [Disambiguations](./003-disambiguations.md): Common terminology confusion.
 - [Python](./004-python.md): Quick refresher on Python programming language. with focus on parts that help to make sense of the MicroPython API (labP)
 - [MicroPython](./005-micropython.md): Complete Introduction to MicroPython (Generic, applicable to ESP32 but also other boards).

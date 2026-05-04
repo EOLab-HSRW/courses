@@ -16,6 +16,7 @@ Applied environmental measurement begins with a simple fact: measurement is in t
 Measururing by itself is just the tool, to need to pair it with relevant variables, in the context of environment,
 [Essential Climate Variables (ECVs)](https://gcos.wmo.int/site/global-climate-observing-system-gcos/essential-climate-variables)
 
+*The expected reading time of this page is approximately 30 minutes*.
 
 ## Summary
 

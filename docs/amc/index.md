@@ -52,8 +52,8 @@ Any revisions to the schedule will be communicated through the official channels
 | Date       | Time          | Location  | Topics                                                                                                     | Materials |
 |------------|---------------|-----------|------------------------------------------------------------------------------------------------------------|-----------|
 | 2026.04.21 | 14:00 - 15:30 | 03 02 130 | Introduction to applied measurement and control.                                                           |           |
-| 2026.05.15 | 08:15 - 15:30 | 03 02 130 | General principles of electrical measurements.<br/>Sensors and Signals (part 1)                            |           |
-| 2026.05.29 | 08:15 - 15:30 | 03 02 130 | Sensors and Signals (part 2). <br/> Power sources and regulators.                                          |           |
+| 2026.05.15 | 08:15 - 15:30 | 03 02 130 | General principles of electrical measurements.<br/> Power sources and regulators.                          |           |
+| 2026.05.29 | 08:15 - 15:30 | 03 02 130 | Sensors and Signals (part 1).<br/>Sensors and Signals (part 2).                                            |           |
 | 2026.06.05 | 08:15 - 15:30 | 03 02 130 | Introduction to microcontrollers and single-board-computers.<br/>Output devices and actuators.             |           |
 | 2026.06.19 | 08:15 - 15:30 | 03 02 130 | Wired and Wireless communication. <br/>Provisional date for the **project work part 1** (to be confirmed). |           |
 | 2026.07.03 | 08:15 - 15:30 | 03 02 130 | Data processing and visualization.<br/>Cloud, Database and Data loggers                                    |           |

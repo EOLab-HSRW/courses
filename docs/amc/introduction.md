@@ -71,14 +71,14 @@ $$
 y = f(x_1, x_2, \ldots, x_n),
 $$
 
-where \(y\) is the measurand and the \(x_i\) are input quantities. If the inputs are uncorrelated, the combined standard uncertainty is commonly expressed as
+where $y$ is the measurand and the $x_i$ are input quantities. If the inputs are uncorrelated, the combined standard uncertainty is commonly expressed as
 
 
 $$
 u_c(y)=\sqrt{\sum_{i=1}^{n}\left(c_i\,u(x_i)\right)^2},
 $$
 
-with sensitivity coefficients \(c_i=\partial f/\partial x_i\). If covariance matters, covariance terms must be added. NIST describes this as the law of propagation of uncertainty, commonly referred to as the root-sum-of-squares method. The VIM then defines expanded uncertainty as the product of combined standard uncertainty and a coverage factor \(k\), usually written as
+with sensitivity coefficients $c_i=\partial f/\partial x_i$. If covariance matters, covariance terms must be added. NIST describes this as the law of propagation of uncertainty, commonly referred to as the root-sum-of-squares method. The VIM then defines expanded uncertainty as the product of combined standard uncertainty and a coverage factor $k$, usually written as
 
 $$
 U = k\,u_c(y).

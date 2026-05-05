@@ -16,6 +16,8 @@ import img_usb_cable from './core-kit/usb-cable.jpg'
 
 # Core Kit
 
+*The expected reading time of this page is approximately 5 minutes*.
+
 The "AMC Core Kit" is a minimalist kit that includes a set of components designed to help you explore the fundamentals of working with microcontrollers.
 
 ![AMC Core Kit - Banner showing 50 kits](./core-kit/banner.jpg)
@@ -62,21 +64,21 @@ To explore additional technologies that are relevant to AMC, the AMC teaching te
 
 As an AMC student, you may also have the opportunity to repeat specific exercises if you consider it useful for your learning process. However, this must be done on-site at the university, using the equipment provided by the teaching team. Please contact the teaching team sufficiently in advance to arrange an appointment.
 
-- I2C, SPI and 1-Wire
-- Power supplies
-- Battery systems/photovoltaic
-- Some Wireless technologies like NFC, LoRa
+**What technologies are missing from the kit?**
 
-Sensors:
-- DHT22 (temp + hum)
-- SHT31 (temp + hum)
-- DS18B20
-- Capacitive soil moisture sensor
-- DC source
+Inter-Integrated Circuit (**I2C**): pronounced as "eye-squared-see" or "eye-two-see", is not explicitly covered by the core kit components. This communication protocol is commonly used by sensor modules such as the **BME280** temperature, humidity, and pressure sensor, the **MPU-6050** accelerometer and gyroscope, the **BH1750** light sensor, and small **SSD1306** OLED displays.
 
+Serial Peripheral Interface (**SPI**): SPI is another common communication protocol that is not represented by a dedicated component in the AMC Core Kit. SPI is typically used when higher data transfer speeds are required. Examples include microSD card modules, RFID/NFC readers such as the **MFRC522**, TFT display modules, and thermocouple amplifier modules such as the **MAX6675**.
 
-[](https://docs.micropython.org/en/latest/esp32/quickref.html)
+**1-Wire**: It is commonly used for low-cost digital temperature sensors, especially the **DS18B20** temperature sensor, which is widely used.
 
+**Power supplies, battery module or photovoltaic system**: The kit does not include a dedicated external power supply, battery module, or photovoltaic system. For the exercises, the USB cable and the integrated voltage regulation of the ESP32 development board are sufficient (max. current draw per GPIO 40 mA at 3.3V). However, the available current depends on the specific board and USB power source. This is usually enough for the ESP32 and small low-power modules, but it is not suitable for motors, servos, relays, or other power-hungry devices. These components require an external power supply with a common ground connection to the ESP32.
+
+**NFC, LoRa, and other wireless technologies**: The ESP32 already provides Wi-Fi and Bluetooth/BLE functionality, but other wireless technologies are not included in kit. Examples of some modules in this category include PN532 NFC modules, SX1276/RA-02 LoRa modules, nRF24L01 radio modules, and HC-05 Bluetooth modules.
+
+**Project-dependent sensors**: Some sensors are only required for specific projects and are therefore not included in the AMC Core Kit. Examples include HC-SR04 ultrasonic distance sensors, PIR motion sensors, MQ-series gas sensors, soil moisture sensors, load cells with HX711 amplifiers, and INA219 current sensors. These components will be provided by the teaching team when they are required for a specific exercise or specific final project.
+
+Once again, the fact that these technologies are not included in the AMC Core Kit does not mean that they will not be covered during the development of AMC. In fact, most of them, with the exception of some wireless technologies, will be addressed during the course. The difference is that these components will be provided by the teaching team only when they are required for a specific exercise, instead of being included permanently in the AMC Core Kit.
 
 ## Bill Of Material (BOM)
 

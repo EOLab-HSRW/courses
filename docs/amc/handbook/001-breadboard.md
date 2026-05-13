@@ -1,5 +1,7 @@
 # Breadboard and Schematic
 
+![Breadboard](./breadboard/breadboard.png)
+
 ## Schematic
 
 Given the fact that AMC is expending student to have done some courses passed, specifically "8115 Physics: Mechanics, Electricity and Magnetism" that introduce all the concepts related with Electricity and circuits. Under that consider this as recap since you You should be fimilar with the represetation of electical diagramas, normally called "Schematic".

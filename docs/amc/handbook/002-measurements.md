@@ -61,6 +61,7 @@ import resistor_arr1 from './measurements/resistor_arr1.png';
 2. Place the probes of the multimeter in a way that are in contact with test point pair A-B.
 3. Take three readings of the equivalent resistance and record each reading in the table. Between readings, lift the multimeter probe tips off the circuit, then place them back on the same test points.
 4. Repeat step 2 and 3 for test point pair A-C and B-C.
+5. Remove all components from the breadboard and put them back to their bag accordingly before proceeding to the next arrangement.
 
 #### E1.2 Arrangement 2
 
@@ -76,6 +77,7 @@ import resistor_arr2 from './measurements/resistor_arr2.png';
 2. Place the multimeter probes on the test point pair A-B.
 3. Take three readings of the equivalent resistance and record each reading in the table. Between readings, lift the multimeter probe tips off the circuit, then place them back on the same test points.
 4. Repeat step 2 and 3 but this time you push the button and hold while you record the readings.
+5. Remove all components from the breadboard and put them back to their bag accordingly before proceeding to the next arrangement.
 
 #### E1.3 Arrangement 3
 
@@ -91,6 +93,7 @@ import resistor_arr3 from './measurements/resistor_arr3.png';
 2. Place the multimeter probes on the test point pair A-B.
 3. Take three readings of the equivalent resistance and record each reading in the table. Between readings, lift the multimeter probe tips off the circuit, then place them back on the same test points.
 4. Repeat step 2 and 3 for test point pair A-C.
+5. Remove all components from the breadboard and put them back to their bag accordingly before proceeding to the next arrangement.
 
 **Checkpoint!**: You have reached a checkpoint in the exercise, at this point you should already have 4 tables of measurement data.
 
@@ -135,6 +138,7 @@ import capacitor_arr1 from './measurements/capacitor_arr1.png';
 2. Place the multimeter probes on the test point pair A-B.
 3. Wait for the reading to stabilise before recording.
 4. Take three readings of the equivalent capacitance and record each reading in the table. Between readings, lift the multimeter probe tips off the circuit, then place them back on the same test points.
+5. Remove all components from the breadboard and put them back to their bag accordingly before proceeding to the next arrangement.
 
 #### E2.2 Arrangement 2
 
@@ -150,6 +154,7 @@ import capacitor_arr2 from './measurements/capacitor_arr2.png';
 2. Stick the multimeter leads on the test point pair A-B.
 3. Wait for the reading to stabilise before recording.
 4. Take three readings of the equivalent capacitance and record each reading in the table. Between readings, lift the multimeter probe tips off the circuit, then place them back on the same test points.
+5. Remove all components from the breadboard and put them back to their bag accordingly before proceeding to the next arrangement.
 
 ## Assignment
 

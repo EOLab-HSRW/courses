@@ -8,6 +8,10 @@ import create_new_project from './programming/create-new-project.png';
 import project_setup from './programming/project-setup.png';
 import click_main_cpp from './programming/click-main-cpp.png';
 import minimal_code from './programming/minimal-code.png';
+import compile from './programming/compile.png';
+import compile_success from './programming/compile-success.png'
+import upload from './programming/upload.png'
+import upload_success from './programming/upload-success.png'
 
 # Introduction to Programming Microcontrollers
 
@@ -224,7 +228,19 @@ Although the minimal program above does not perform any visible action, it is st
 
 Before the program can be placed on the microcontroller, it must be compiled. In PlatformIO, compilation is usually started by clicking the **Build** button, represented by a check mark in the PlatformIO toolbar.
 
+<div align="center">
+| <img src={compile} width="640" alt="Compile code with platformio"/> |
+|----|
+| Compile code in platformio. |
+</div>
+
 When the build process starts, PlatformIO reads the `platformio.ini` file and determines the selected board, platform, and framework. It then finds the source files in the `src` folder and passes them to the compiler. The compiler checks the syntax of the code, translates it into object files, and links it with the required framework libraries. If all steps succeed, PlatformIO creates a firmware file ready to be uploaded to the board.
+
+<div align="center">
+| <img src={compile_success} width="640" alt="Compile successfully code with platformio"/> |
+|----|
+| Successfully compile code in platformio. |
+</div>
 
 If the program contains an error, the compilation fails. This does not damage the board. It simply means that PlatformIO could not produce valid firmware from the source code. The error message appears in the terminal panel at the bottom of VS Code. These messages can look difficult at first, but they usually contain useful information, including the file name, the line number, and the type of error.
 
@@ -250,9 +266,21 @@ After the program compiles successfully, the next step is to upload it to the ES
 
 In PlatformIO, click the **Upload** button, usually represented by a right arrow. PlatformIO will compile the project if necessary, detect the serial port, place the ESP32 into programming mode, transfer the firmware, and reset the board so the new program starts running.
 
+<div align="center">
+| <img src={upload} width="640" alt="Upload code with platformio"/> |
+|----|
+| Upload code in platformio. |
+</div>
+
 If the upload fails, the problem is usually related to the connection, board selection, serial port, or USB driver. Check that the board is connected correctly and that the selected board in `platformio.ini` matches the board being used. Also check that no other program, such as a serial monitor, is already using the same port.
 
 On some ESP32 boards, the automatic reset circuit does not always place the board into programming mode reliably. If this happens, hold the **BOOT** button on the board while the upload begins, then release it once the upload starts. This manually forces the ESP32 into the correct mode for flashing.
+
+<div align="center">
+| <img src={upload_success} width="640" alt="Upload code with platformio"/> |
+|----|
+| Successful upload code in platformio. |
+</div>
 
 ---
 

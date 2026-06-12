@@ -105,7 +105,7 @@ The following is the list of components included in the AMC Core Kit:
 | 1        | LED Blue                               |                                                                  | [151051BS04000](https://www.digikey.de/en/products/detail/w%C3%BCrth-elektronik/151051BS04000/4490009)                                                                                                                                        |
 | 0        | DS18B20 temperature sensor             |                                                                  | [DS18B20](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.analog.com/media/en/technical-documentation/data-sheets/ds18b20.pdf&ved=2ahUKEwiX1v3kxcyUAxWynf0HHVYBBysQFnoECBsQAQ&usg=AOvVaw0HhbceaHCzOlfXbnNtpZZ0) |
 | 0        | BMP280 barometric and temp sensor      |                                                                  | [BMP280](https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp280-ds001.pdf)                                                                                                                                      |
-
+| 1        | Cardboard box                          |                                                                  | [Maxibriefkarton DIN A6 186 x 106 x 34 mm - kartons24](https://www.kartons24.de/Maxibriefkarton-DIN-A6-186-x-106-x-34-mm)                                                                                                                     |
 
 *: Manufacturer Product Number (MFR-PN). There is nothing special about these specific MFR-PN, they can be exange with any equivalent component, there are here for completness and tracability of components.
 

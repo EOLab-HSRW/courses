@@ -173,10 +173,6 @@ Disclosure requirements (mandatory if you use an [LLM]):
 
 - Environment and Energy. (2026). Applied measurement and control: Mini-Handbook [Open educational resource] [courses.eolab.de/amc/handbook](https://courses.eolab.de/amc/handbook) Hochschule Rhein-Waal, Faculty of Communication and Environment.
 
-- Severance, C. R. (2016). Python for everybody: Exploring data using Python 3. [Open educational resource] [www.py4e.com/book](https://www.py4e.com/book)
-
-- VanderPlas, J. (2016). Python data science handbook. [Open educational resource] [jakevdp.github.io/PythonDataScienceHandbook/](https://jakevdp.github.io/PythonDataScienceHandbook)
-
 - Strumpen, V. (2015). Introduction to digital circuits: Chapter 1, Electrical foundations. [Open educational resource] [strumpen.net](https://strumpen.net/dc/build/html/electricalfoundations/electricalfoundations.html).
 
 ## Disclaimer

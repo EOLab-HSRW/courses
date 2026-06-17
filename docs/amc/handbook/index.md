@@ -11,7 +11,7 @@ import power_banner from './banners/power-chapter-banner.png';
 import sensors_banner from './banners/sensors-chapter-banner.png';
 import disambiguations_banner from './banners/disambiguations-chapter-banner.png';
 import microcontrollers_banner from './banners/microcontrollers-chapter-banner.png';
-import programming_banner from './banners/microcontrollers-chapter-banner.png';
+import programming_banner from './banners/programming-chapter-banner.png';
 import outputs_banner from './banners/outputs-chapter-banner.png';
 
 # The AMC Mini-Handbook

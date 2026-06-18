@@ -21,7 +21,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
 <div className="chapterGrid">
 
   <Link className="chapterCard" to="/amc/core-kit">
-    <img className="chapterCardImage" src={core_kit_banner} alt="" />
+    <img className="chapterCardImage" src={core_kit_banner} alt="" draggable="false" />
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 1</span>
       <h2>AMC Core Kit</h2>
@@ -29,7 +29,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   </Link>
 
   <Link className="chapterCard" to="/amc/handbook/breadboard">
-    <img className="chapterCardImage" src={breadboard_banner} alt="" />
+    <img className="chapterCardImage" src={breadboard_banner} alt="" draggable="false" />
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 2</span>
       <h2>Breadboard and Schematics</h2>
@@ -37,7 +37,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   </Link>
 
   <Link className="chapterCard" to="/amc/handbook/measurements">
-    <img className="chapterCardImage" src={measurements_banner} alt="" />
+    <img className="chapterCardImage" src={measurements_banner} alt="" draggable="false" />
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 3</span>
       <h2>Measurements and Multimeter</h2>
@@ -45,7 +45,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   </Link>
 
   <Link className="chapterCard" to="/amc/handbook/power">
-    <img className="chapterCardImage" src={power_banner} alt="" />
+    <img className="chapterCardImage" src={power_banner} alt="" draggable="false" />
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 4</span>
       <h2>Power and Regulators</h2>
@@ -53,7 +53,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   </Link>
 
   <Link className="chapterCard" to="/amc/handbook/sensors">
-    <img className="chapterCardImage" src={sensors_banner} alt="" />
+    <img className="chapterCardImage" src={sensors_banner} alt="" draggable="false" />
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 5</span>
       <h2>Sensors and Signals</h2>
@@ -61,7 +61,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   </Link>
 
   <Link className="chapterCard" to="/amc/handbook/disambiguations">
-    <img className="chapterCardImage" src={disambiguations_banner} alt="" />
+    <img className="chapterCardImage" src={disambiguations_banner} alt="" draggable="false" />
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 6</span>
       <h2>Disambiguations</h2>
@@ -69,7 +69,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   </Link>
 
   <Link className="chapterCard" to="/amc/handbook/microcontrollers">
-    <img className="chapterCardImage" src={microcontrollers_banner} alt="" />
+    <img className="chapterCardImage" src={microcontrollers_banner} alt="" draggable="false" />
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 7</span>
       <h2>Microcontrollers</h2>
@@ -77,7 +77,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   </Link>
 
   <Link className="chapterCard" to="/amc/handbook/programming">
-    <img className="chapterCardImage" src={programming_banner} alt="" />
+    <img className="chapterCardImage" src={programming_banner} alt="" draggable="false" />
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 8</span>
       <h2>Introduction to Programming Microcontrollers</h2>
@@ -85,7 +85,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   </Link>
 
   <Link className="chapterCard" to="/amc/handbook/outputs">
-    <img className="chapterCardImage" src={outputs_banner} alt="" />
+    <img className="chapterCardImage" src={outputs_banner} alt="" draggable="false" />
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 9</span>
       <h2>Output Devices</h2>
@@ -119,6 +119,7 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   text-decoration: none;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
   transition: transform 160ms ease, box-shadow 160ms ease;
+  cursor: pointer;
 }
 
 .chapterCard:hover {
@@ -131,6 +132,11 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
   display: block;
   width: 100%;
   height: auto;
+
+  /* Important: image itself is not clickable,
+     but the parent card link still is. */
+  pointer-events: none;
+  user-select: none;
 }
 
 .chapterCardOverlay {

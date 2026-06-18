@@ -10,6 +10,8 @@ import pull_down_and_pull_down from './sensors/pull-up_and_pull-down.png'
 import pull_up_video from './sensors/pull-up.mp4'
 import pull_down_video from './sensors/pull-down.mp4'
 import ex_circuit from './sensors/ex-circuits.png'
+import sensor_vs_module from './sensors/sensor-vs-module.jpg'
+import sensor_modules from './sensors/sensor-modules.jpg'
 
 Sensors are the connection between a physical system and a digital system (like a microcontroller). A microcontroller cannot directly understand temperature, light, pressure, distance, humidity, acceleration, or sound. It can only work with electrical quantities such as voltage, current, resistance, logic levels, timing, and digital data.
 
@@ -477,10 +479,21 @@ A library can simplify the software, but it does not replace understanding the e
 
 ## Sensor Modules
 
-Many sensors used in introductory microcontroller work are not bare sensors. They are mounted on small printed circuit boards, often called modules or breakout boards.
+Many sensors used in prototyping (including AMC) are not bare sensing elements. Instead, they are mounted on small printed circuit boards, often called **sensor modules**, just **modules** or **breakout boards**.
 
-A module may include additional components that make the sensor easier to use, such as:
+For example, the *CdS photoresistor* and the *DS18B20* included in the [AMC Core Kit](/amc/core-kit) can be used with relatively little supporting circuitry. The *CdS photoresistor* is a simple sensing element whose resistance changes with light. The *DS18B20* is a packaged digital temperature sensor that can be connected directly to a microcontroller interface with only minimal external components.
 
+By contrast, a device such as the *BMP280* is commonly used in AMC as example sensor module (see your AMC Core Kit). The BMP280 sensor IC itself is small and not convenient to connect directly on a [breadboard](/amc/handbook/breadboard). The module places the sensor IC on a breakout board and may include additional circuitry that makes it easier and safer to use in an educational setting.
+
+<div align="center">
+
+| <img src={sensor_vs_module} width="640" alt="Sensor vs module."/> |
+| ----------------------------------------------------------------------- |
+| Visual comparison between a bare sensor and a sensor module.               |
+
+</div>
+
+In AMC, we mainly use sensor modules unless the sensor is simple enough to be used directly, such as the DS18B20 or the CdS photoresistor. Modules are practical in an educational context and prototyping because they may include supporting components such as:
 * voltage regulators,
 * level shifters,
 * pull-up resistors,
@@ -490,12 +503,21 @@ A module may include additional components that make the sensor easier to use, s
 * connectors,
 * and indicator LEDs.
 
-This can be helpful, but it can also hide important details. Two modules with the same sensor IC may not behave exactly the same if the surrounding circuitry is different.
+The following image highlights the sensing elements on different sensor modules.
 
-For example, a bare analog sensor may require a voltage divider, but a module may already include one. A bare I2C sensor may require external pull-up resistors, but a module may already include them. A sensor IC may be 3.3 V-only, while a module may include a regulator that allows it to be powered from 5 V.
+<div align="center">
+
+| <img src={sensor_modules} width="640" alt="Sensor modules."/> |
+| ----------------------------------------------------------------------- |
+| Examples of sensor modules and their sensing elements.               |
+
+</div>
+
+Sensor modules are useful because they simplify wiring and reduce the amount of external circuit design required by the user. However, they can also hide important details. Two modules that use the same sensor IC may not behave exactly the same if the surrounding circuitry is different.
+
+For example, a bare analog sensor may require a voltage divider, while a module may already include one. A bare I2C sensor IC may require external pull-up resistors, while a module may already include them. A sensor IC may be designed for 3.3 V operation only, while a module may include a voltage regulator that allows the board to be powered from 5 V.
 
 Therefore, when working with modules, distinguish between:
-
 * the **sensor IC**,
 * the **module board**,
 * the **communication interface**,

@@ -31,7 +31,7 @@ Other manufacturers provide similar toolchains for their own devices. [Microchip
 
 The advantage of vendor-specific development is control. You as the programmer can configure the device in detail and use features that may not be available through vendor-agnostic frameworks. The disadvantage is that this approach is usually less beginner-friendly. It may require knowledge of hardware registers, clock configuration, memory layout, interrupts, device drivers, and manufacturer-specific documentation.
 
-A second approach is to use a **vendor-agnostic framework**. These frameworks provide a more general programming interface that can be used across different boards and microcontroller families. The most common example is the **Arduino framework**. Although people often refer to it as the “Arduino language,” it is more accurate to understand it as a simplified C++ programming environment with a large ecosystem of libraries and examples. See [Disambiguations](./disambiguations#Arduino).
+A second approach is to use a **vendor-agnostic framework**. These frameworks provide a more general programming interface that can be used across different boards and microcontroller families. The most common example is the **Arduino framework**. Although people often refer to it as the “Arduino language,” it is more accurate to understand it as a simplified C++ programming environment with a large ecosystem of libraries and examples. See [Disambiguations](/amc/handbook/disambiguations#arduino-is-not-one-thing).
 
 The Arduino framework provides functions such as `pinMode()`, `digitalWrite()`, `analogRead()`, `delay()`, and `Serial.print()`. These functions hide many of the low-level details and make it easier to start writing programs that interact with hardware. This does not mean that Arduino is only for simple projects; it means that it provides a practical starting point. Many concepts learned through Arduino-based development are still relevant when moving later to lower-level embedded programming.
 
@@ -184,15 +184,17 @@ The words **program**, **flash**, and **upload** are often used to describe the 
 
 ---
 
-## Minimal Arduino-Style Program
+## Minimal Arduino (framework) Program
 
-The smallest useful Arduino-style program has two required functions: `setup()` and `loop()`.
+An Arduino program (refering to Arduino Framework) is organized around two functions: `setup()` and `loop()`.
 
 <div align="center">
 | <img src={minimal_code} width="640" alt="Minimal code"/> |
 |----|
 | Minimal Arduino-style program structure. |
+
 </div>
+
 
 The same program can be written as:
 
@@ -208,17 +210,33 @@ void loop() {
 }
 ```
 
+Although this program does not yet interact with any hardware, it is valid and can be compiled and uploaded to the ESP32.
+
 The first line includes the Arduino framework:
 
 ```cpp
 #include <Arduino.h>
 ```
 
-This line gives the program access to Arduino functions such as `pinMode()`, `digitalWrite()`, `analogRead()`, `delay()`, and `Serial.begin()`. In the Arduino IDE this include is often hidden, but in PlatformIO it is normally written explicitly.
+In PlatformIO, this include directive is normally written explicitly, although the Arduino IDE often hides it. It gives the program access to Arduino functions such as `pinMode()`, `digitalWrite()`, `analogRead()`, `delay()`, and `Serial.begin()`, which will be introduced and explained in this chapter.
 
-The `setup()` function runs once when the microcontroller starts. It is used for initialization. For example, this is where pins are configured, serial communication is started, sensors are initialized, or initial output states are defined.
+The `setup()` function **runs once** whenever the microcontroller starts or resets:
 
-The `loop()` function runs after `setup()` has finished. Unlike `setup()`, it does not run only once. It repeats continuously while the microcontroller has power. This repeated execution is central to most embedded programs. A microcontroller usually waits for inputs, checks conditions, updates outputs, communicates with devices, and then repeats the same process again and again.
+```cpp
+void setup() {
+
+}
+```
+
+After `setup()` finishes, the Arduino framework repeatedly calls the `loop()` function:
+
+```cpp
+void loop() {
+
+}
+```
+
+The instructions inside `loop()` continue to **execute for as long as the microcontroller is powered**. Unlike `setup()`, it does not run only once. A microcontroller usually waits for inputs, checks conditions, updates outputs, communicates with devices, and then repeats the same process again and again.
 
 Although the minimal program above does not perform any visible action, it is still a valid program. It can be compiled and uploaded to the board. This is useful as a first test because it verifies that the toolchain, board selection, and upload connection are working before any circuit-specific code is introduced.
 
@@ -256,7 +274,7 @@ The corrected version is:
 digitalWrite(ledPin, HIGH);
 ```
 
-A successful compilation means that the code is syntactically valid and can be converted into firmware for the selected board. It does not guarantee that the program logic is correct or that the circuit is wired properly. It only confirms that the program can be built.
+A successful compilation means that the code is **syntactically valid** and can be converted into firmware for the selected board. It **does not guarantee that the program logic is correct** or that the circuit is wired properly. It only confirms that the program can be built.
 
 ---
 
@@ -284,82 +302,527 @@ On some ESP32 boards, the automatic reset circuit does not always place the boar
 
 ---
 
-## First Visible Program: Blink
+## First Input Program: Button, LDR, and Potentiometer
 
-A minimal empty program confirms that the board can be programmed, but it does not produce any visible behavior. The traditional first visible microcontroller program is called **Blink**. It turns an LED on and off repeatedly. In embedded systems, Blink plays the same role that “Hello, world!” plays in introductory software programming.
+A minimal program confirms that the ESP32 can be compiled and programmed, but it does not yet interact with the physical circuit. The next step is to read actual hardware inputs.
 
-Many ESP32 development boards have an onboard LED connected to GPIO 2, although this can vary between board versions. The following program assumes that the onboard LED is connected to GPIO 2:
+For this example, we will return to the circuit assembled in the [Sensors and Signals](/amc/handbook/sensors#exercises) chapter. That circuit contains:
+* A push button connected as a digital input.
+* A photoresistor, also called an LDR, connected through a voltage divider.
+* A potentiometer connected as an adjustable voltage divider.
+
+During the earlier exercise, the microcontroller was treated as a black box that collected measurements and sent them to the web terminal (the [AMC Simple Web Terminal](https://eolab-hsrw.github.io/amc-simple-web-terminal/)). We will now reconstruct that program incrementally and examine how each input is read.
+
+The final program will produce three comma-separated values:
+
+```text
+button_value,ldr_value,potentiometer_value
+```
+
+For example:
+
+```text
+0,742,318
+```
+
+The exact analog values depend on the amount of light reaching the LDR and the position of the potentiometer.
+
+### Describing the Physical Connections
+
+The program must know which GPIO pin is connected to each part of the circuit. These connections are defined near the beginning of the source file:
+
+```cpp
+const int BUTTON_PIN       = 23;
+const int LDR_PIN          = 15;
+const int POTENTIOMETER_PIN = 4;
+```
+
+A declaration such as:
+
+```cpp
+const int BUTTON_PIN = 23;
+```
+
+creates a named constant.
+
+The name `BUTTON_PIN` describes the purpose of the value, while `23` identifies the physical GPIO connection. The keyword `const` means that the value is not expected to change while the program is running.
+
+Using named constants is clearer than writing GPIO numbers directly throughout the program. It also makes the program easier to modify. If a component is later connected to a different pin, its GPIO number only needs to be changed in one location.
+
+The pin definitions correspond to the earlier circuit:
+
+| Component           | Development-board label | GPIO function                |
+| ------------------- | ----------------------: | ---------------------------- |
+| Push button         |                     D23 | Digital input                |
+| LDR voltage divider |                     D15 | Analog input, ADC2 channel 3 |
+| Potentiometer wiper |                      D4 | Analog input, ADC2 channel 0 |
+
+### Configuring an Input with `pinMode()`
+
+A GPIO pin can support several possible functions. Before using the button pin, the program should configure how that pin will behave.
+
+The configuration is performed inside `setup()`:
+
+```cpp
+void setup() {
+    pinMode(BUTTON_PIN, INPUT);
+}
+```
+
+The function call has two arguments:
+
+```cpp
+pinMode(pin, mode);
+```
+
+The first argument identifies the GPIO pin. The second argument selects its operating mode.
+
+In this example:
+
+```cpp
+pinMode(BUTTON_PIN, INPUT);
+```
+
+configures GPIO 23 as a digital input.
+
+The button circuit already includes an external 10 kΩ pull-up resistor. This resistor keeps the input connected to 3.3 V when the button is not pressed. Pressing the button connects the signal to ground.
+
+The resulting electrical and logical states are:
+
+| Button condition |       Input voltage | Result of `digitalRead()` |
+| ---------------- | ------------------: | ------------------------- |
+| Released         | Approximately 3.3 V | `HIGH`                    |
+| Pressed          |   Approximately 0 V | `LOW`                     |
+
+Without a pull-up or pull-down connection, the input could become electrically floating when the switch is open. A floating input does not have a reliably defined voltage and may appear to change state unpredictably.
+
+> The Arduino framework also provides the `INPUT_PULLUP` mode, which enables an internal pull-up resistor. That mode is useful when the switch is connected to ground and no external pull-up resistor is present. The circuit used in this exercise already contains an external pull-up resistor, so `INPUT` describes the schematic more accurately.
+
+
+### Reading the Button with `digitalRead()`
+
+After the pin has been configured, its current logic state can be read with `digitalRead()`:
+
+```cpp
+int rawButtonState = digitalRead(BUTTON_PIN);
+```
+
+The function has the following general form:
+
+```cpp
+digitalRead(pin);
+```
+
+Its argument identifies the GPIO pin to be read. The function returns one of two predefined values:
+* `HIGH`
+* `LOW`
+
+For the pull-up circuit used in this exercise, the button is active-low:
+
+| Button condition |    Electrical state | `digitalRead()` result |
+| ---------------- | ------------------: | ---------------------- |
+| Released         | Approximately 3.3 V | `HIGH`                 |
+| Pressed          |   Approximately 0 V | `LOW`                  |
+
+This behavior follows directly from the circuit. When the button is released, the pull-up resistor connects the input to 3.3 V. When the button is pressed, the switch connects the input to ground.
+
+Although the raw electrical state is correct, applications commonly represent an activated input with `1` and an inactive input with `0`. The raw button state can therefore be converted with a comparison:
+
+```cpp
+if (digitalRead(BUTTON_PIN) == LOW) {
+  buttonValue = 1;
+} else {
+  buttonValue = 0;
+}
+```
+
+The expression:
+
+```cpp
+if (digitalRead(BUTTON_PIN) == LOW) {
+  buttonValue = 1;
+} else {
+  buttonValue = 0;
+```
+
+asks whether the button input is currently at logic low.
+
+The comparison produces:
+* `1` when the condition is true and the button is pressed.
+* `0` when the condition is false and the button is released.
+
+Do not confuse the assignment and comparison operators:
+
+```cpp
+=    // Assigns a value
+==   // Compares two values
+```
+
+The input-reading operation can now be added to the program:
 
 ```cpp
 #include <Arduino.h>
 
-const int ledPin = 2;
+// GPIO connected to the push-button circuit.
+const int BUTTON_PIN = 23;
 
 void setup() {
-    pinMode(ledPin, OUTPUT);
+    // Configure GPIO 23 as a digital input.
+    // The circuit already contains an external pull-up resistor.
+    pinMode(BUTTON_PIN, INPUT);
 }
 
 void loop() {
-    digitalWrite(ledPin, HIGH);
-    delay(1000);
-
-    digitalWrite(ledPin, LOW);
+    // Read and interpret the active-low button signal.
+    //
+    // released -> HIGH -> 0
+    // pressed  -> LOW  -> 1
+    int buttonValue = (digitalRead(BUTTON_PIN) == LOW);
     delay(1000);
 }
 ```
 
-The variable `ledPin` stores the GPIO number used for the LED. Defining the pin as a named constant makes the program easier to read and easier to modify later. If the LED is connected to a different pin, only this value needs to be changed.
+The ESP32 now reads the button every time `loop()` executes. However, the value is only stored inside the variable `buttonValue`. It is internal program data and cannot yet be observed from the computer.
 
-Inside `setup()`, the instruction `pinMode(ledPin, OUTPUT);` configures the pin as an output. A microcontroller pin can often be used in different modes, so the program must specify how the pin will be used.
+The program therefore has no visible behavior, even though it is reading the physical input correctly. A method is needed to inspect values while the program is running.
 
-Inside `loop()`, the instruction `digitalWrite(ledPin, HIGH);` sets the pin to a high voltage level. This usually turns the LED on. The instruction `delay(1000);` pauses the program for 1000 milliseconds, which is one second. Then `digitalWrite(ledPin, LOW);` sets the pin to a low voltage level, usually turning the LED off. A second delay keeps it off for one second before the loop repeats.
+### Inspecting Program Values with the Serial Monitor
 
-If the program uploads successfully but no LED blinks, the board may use a different onboard LED pin, or it may not have an onboard LED connected to a programmable GPIO. In that case, an external LED and resistor can be connected to a known GPIO pin on the breadboard.
+When developing an embedded program, it is often necessary to inspect information that exists only inside the microcontroller. Examples include:
+* The current state of a button.
+* A raw sensor measurement.
+* The result of a calculation.
+* The current stage of the program.
+* Diagnostic information used while debugging.
 
----
+The ESP32 can transmit this information to the computer through its **serial connection**. A **serial monitor** is a tool that displays the data received through that connection.
 
-## Using the Serial Monitor
+Serial communication must first be initialized inside `setup()`:
 
-Not all programs produce visible output through an LED or other component. Sometimes the most useful output is text sent from the microcontroller back to the computer. This is done using serial communication.
+```cpp
+Serial.begin(9600);
+```
 
-The PlatformIO Serial Monitor allows the computer to receive and display messages sent by the ESP32 through the USB connection. This is one of the most useful debugging tools in beginner embedded programming.
+`Serial.begin()` configures the communication interface. Its argument specifies the baud rate, which describes the communication speed, in this example, the baud rate is `9600`.
 
-A basic serial program looks like this:
+```cpp
+Serial.begin(baud_rate);
+```
+
+The serial monitor must be configured to use the same baud rate. If the program and the monitor use different settings, the received text may be unreadable or may not appear correctly.
+
+After serial communication has been initialized, `Serial.println()` can be used to transmit a value:
+
+```cpp
+Serial.println(buttonValue);
+```
+
+`Serial.println()` sends the value and then ends the line. Each subsequent value therefore appears on a new line in the serial monitor.
+
+The button example can now be extended as follows:
 
 ```cpp
 #include <Arduino.h>
 
+// GPIO connected to the push-button circuit.
+const int BUTTON_PIN = 23;
+
 void setup() {
-    Serial.begin(115200);
+    // Configure GPIO 23 as a digital input.
+    // The circuit already contains an external pull-up resistor.
+    pinMode(BUTTON_PIN, INPUT);
+
+    // Start serial communication with the computer.
+    // The serial monitor must use the same baud rate.
+    Serial.begin(9600);
 }
 
 void loop() {
-    Serial.println("Hello from the ESP32");
+    // Read and interpret the active-low button signal.
+    //
+    // released -> HIGH -> 0
+    // pressed  -> LOW  -> 1
+    int buttonValue = (digitalRead(BUTTON_PIN) == LOW);
+
+    // Send the interpreted button value to the computer.
+    Serial.println(buttonValue);
+
+    // Wait before taking and transmitting the next reading.
+    // Without this delay, the program would produce many lines
+    // of output every second.
     delay(1000);
 }
 ```
 
-The instruction `Serial.begin(115200);` starts serial communication at a baud rate of 115200 bits per second. The Serial Monitor must be configured to use the same baud rate. If the baud rate in the monitor does not match the baud rate in the program, the text may appear corrupted or unreadable.
+The monitor should display `0` while the button is released, and `1` while the button is pressed.
 
-The instruction `Serial.println("Hello from the ESP32");` sends a line of text from the ESP32 to the computer. Because this instruction is placed inside `loop()`, the message is printed repeatedly once per second.
+The serial monitor does not control the button or perform the measurement. The measurement is performed by `digitalRead()` on the ESP32. The serial monitor only makes the resulting program value visible on the computer.
 
-Serial output is especially useful when working with sensors. A program can read a sensor value and print it to the Serial Monitor before that value is used to control another part of the circuit. This allows the programmer to check whether the sensor is working before adding more complex behavior.
 
----
 
-## Reading Programs as Hardware Behavior
+**Only one serial terminal should be connected to the ESP32 at a time**. Close the PlatformIO Serial Monitor before connecting through the web terminal, or disconnect the web terminal before opening the PlatformIO monitor.
 
-When programming microcontrollers, the source code should not be read only as software. It should also be read as a description of hardware behavior. Each instruction may correspond to a physical action: a pin changing voltage, a sensor being read, a motor being activated, or data being sent to another device.
+### Reading Analog Inputs with `analogRead()`
 
-For example, the instruction:
+The push button produces a digital signal with two interpreted states. The LDR and potentiometer instead produce continuously variable voltages. To process these voltages in software, the ESP32 uses its analog-to-digital converter, or ADC.
+
+The ADC and its fundamental concepts, including sampling, quantization, and resolution were introduced in [From Analog to Digital](/amc/handbook/sensors#from-analog-to-digital) in the Sensors and Signals chapter. Recall that the ADC converts a measured analog voltage into a numerical value that the program can store and process.
+
+The Arduino framework provides the `analogRead()` function to perform this measurement:
 
 ```cpp
-digitalWrite(ledPin, HIGH);
+int value = analogRead(pin);
 ```
 
-is not only a line of code. It is a command that changes the electrical state of a physical pin on the microcontroller. If an LED circuit is connected to that pin correctly, the electrical change becomes visible as light.
+The argument identifies the GPIO pin connected to the analog signal. When the function is called, the ESP32 samples the voltage on that pin and returns its digital representation as a raw ADC value.
 
-This connection between code and circuit is what makes embedded programming different from ordinary desktop programming. A program can compile correctly and still fail because a wire is placed in the wrong row of the breadboard. Likewise, a circuit can be wired correctly and still fail because the program uses the wrong GPIO pin. Debugging therefore requires checking both the software and the hardware.
+For the ESP32 used in AMC, `analogRead()` uses a 12-bit result by default:
+
+```text
+0 to 4095
+```
+
+A value near `0` represents a voltage near the lower end of the measurable range. A value near `4095` represents a voltage near the upper end of the measurable range.
+
+These numbers are raw ADC values. They are not automatically expressed in volts, resistance, potentiometer position, or light intensity. Their physical meaning depends on the connected circuit and sensor.
+
+#### ADC Resolution Configuration
+
+The Arduino-ESP32 framework automatically uses a 12-bit ADC resolution by default. Consequently, no additional resolution configuration is required before using `analogRead()`.
+
+The following is sufficient:
+
+```cpp
+void loop() {
+    int ldrValue = analogRead(LDR_PIN);
+    int potentiometerValue = analogRead(POTENTIOMETER_PIN);
+}
+```
+
+The Arduino framework also provides the optional function:
+
+```cpp
+analogReadResolution(12);
+```
+
+This function explicitly selects the ADC resolution. However, setting it to 12 bits does not change the behavior of this example because 12 bits is already the default for the ESP32.
+
+It can therefore be safely omitted:
+
+```cpp
+void setup() {
+    Serial.begin(9600);
+
+    // No ADC resolution configuration is required.
+    // Arduino-ESP32 uses 12-bit readings by default.
+}
+```
+
+Explicitly setting the resolution may still be useful when a program deliberately requires a different resolution, when code is transferred between development boards, or when the selected numerical range should be documented and enforced directly in the program.
+
+For the introductory examples in this chapter, the default configuration is sufficient. This keeps the program focused on the essential operation: reading an analog input with `analogRead()`.
+
+> ADC resolution and default behavior are board-dependent. The `0` to `4095` range described here applies to the ESP32 configuration used in AMC and should not be assumed for every Arduino-compatible board.
+
+#### Reading the LDR
+
+The LDR is part of a voltage-divider circuit connected to GPIO 15. Its output voltage can be sampled with:
+
+```cpp
+int ldrValue = analogRead(LDR_PIN);
+```
+
+The function call:
+
+```cpp
+analogRead(LDR_PIN)
+```
+
+performs one analog-to-digital conversion on the GPIO represented by `LDR_PIN`.
+
+Changing the amount of light reaching the LDR changes its resistance. Because the LDR is part of a voltage divider, this resistance change also changes the voltage connected to the ESP32 input. The ADC converts that voltage into a raw numerical value.
+
+The variable is called `ldrValue`, rather than `lightLevel`, because the result is only a raw ADC measurement. It has not yet been converted into a physical unit such as lux.
+
+#### Reading the Potentiometer
+
+The potentiometer wiper is connected to GPIO 4. Its voltage is read in the same way:
+
+```cpp
+int potentiometerValue = analogRead(POTENTIOMETER_PIN);
+```
+
+Rotating the potentiometer changes the voltage at its wiper. The ADC converts this voltage into a raw value between approximately `0` and `4095`.
+
+The LDR and potentiometer respond to different physical inputs:
+
+* The LDR responds to incident light.
+* The potentiometer responds to mechanical rotation.
+
+However, both circuits present the microcontroller with the same type of electrical signal: a variable voltage. The program can therefore read both devices using `analogRead()`.
+
+The analog-input portion of the program is:
+
+```cpp
+#include <Arduino.h>
+
+// Analog input pins
+const int LDR_PIN = 15;
+const int POTENTIOMETER_PIN = 4;
+
+void setup() {
+    // Start serial communication with the computer.
+    Serial.begin(9600);
+
+    // No ADC resolution configuration is required.
+    // Arduino-ESP32 uses 12-bit readings by default.
+}
+
+void loop() {
+    // Read the raw ADC value produced by the LDR voltage divider.
+    int ldrValue = analogRead(LDR_PIN);
+
+    // Read the raw ADC value produced by the potentiometer.
+    int potentiometerValue = analogRead(POTENTIOMETER_PIN);
+}
+```
+
+At this stage, the two measurements are stored in variables inside the microcontroller. The next step is to transmit them through the serial connection so that their values can be inspected on the computer.
+
+### Sending Several Values as CSV Data
+
+The program now has three values:
+
+```cpp
+buttonValue
+ldrValue
+potentiometerValue
+```
+
+They must be transmitted in the same order used in the Sensors and Signals exercise:
+
+```text
+button_value,ldr_value,potentiometer_value
+```
+
+This can be produced using a sequence of `Serial.print()` and `Serial.println()` calls:
+
+```cpp
+Serial.print(buttonValue);
+Serial.print(",");
+Serial.print(ldrValue);
+Serial.print(",");
+Serial.println(potentiometerValue);
+```
+
+`Serial.print()` writes data without automatically moving to a new line. This allows the commas and values to be assembled as one record.
+
+`Serial.println()` writes the final value and then ends the line. The next execution of `loop()` therefore begins a new CSV record.
+
+For example, the instructions may produce:
+
+```text
+0,742,318
+1,744,320
+0,751,319
+```
+
+Each row represents one sampling instant.
+
+### Complete Input Program
+
+The following is the complete program used to read the circuit from the Sensors and Signals exercise:
+
+```cpp
+#include <Arduino.h>
+
+/*
+ * Digital and analog input example
+ *
+ * This program reads:
+ *   1. A push button as a digital input.
+ *   2. An LDR voltage divider as an analog input.
+ *   3. A potentiometer as an analog input.
+ *
+ * One CSV record is sent through the serial connection every second:
+ *
+ *   button_value,ldr_value,potentiometer_value
+ */
+
+// GPIO connected to the push-button circuit.
+const int BUTTON_PIN = 23;
+
+// ADC-capable GPIO connected to the LDR voltage divider.
+// GPIO 15 corresponds to ADC2 channel 3 on the ESP32.
+const int LDR_PIN = 15;
+
+// ADC-capable GPIO connected to the potentiometer wiper.
+// GPIO 4 corresponds to ADC2 channel 0 on the ESP32.
+const int POTENTIOMETER_PIN = 4;
+
+/*
+ * Configure the hardware interfaces.
+ *
+ * setup() runs once when the ESP32 starts or resets.
+ */
+void setup() {
+    // Start serial communication with the computer.
+    // The serial terminal must use the same baud rate.
+    Serial.begin(9600);
+
+    // Configure the button GPIO as an input.
+    // The exercise circuit already contains an external 10 kΩ pull-up.
+    pinMode(BUTTON_PIN, INPUT);
+}
+
+/*
+ * Read the inputs and transmit one CSV record.
+ *
+ * loop() repeats continuously while the ESP32 is powered.
+ */
+void loop() {
+    // Read the digital button input.
+    //
+    // Because the button uses a pull-up circuit:
+    //   released -> HIGH
+    //   pressed  -> LOW
+    //
+    // Comparing the raw state with LOW converts the result to:
+    //   released -> 0
+    //   pressed  -> 1
+    int buttonValue = (digitalRead(BUTTON_PIN) == LOW);
+
+    // Read the raw 12-bit ADC values.
+    //
+    // These values represent measured input voltages.
+    // They are not yet converted into physical units.
+    int ldrValue = analogRead(LDR_PIN);
+    int potentiometerValue = analogRead(POTENTIOMETER_PIN);
+
+    // Send the values as one comma-separated record:
+    //
+    // button_value,ldr_value,potentiometer_value
+    Serial.print(buttonValue);
+    Serial.print(",");
+    Serial.print(ldrValue);
+    Serial.print(",");
+    Serial.println(potentiometerValue);
+
+    // Produce one complete set of readings per second.
+    delay(1000);
+}
+```
+
+The program follows the same repeated sequence used by many embedded applications:
+
+```text
+read the digital input
+→ read the analog inputs
+→ format the measurements
+→ transmit the data
+→ wait
+→ repeat
+```
 
 ---
 
@@ -399,7 +862,6 @@ const int y = 2;
 
 The first version shows the purpose of each pin directly. This becomes increasingly important as circuits become larger and programs become longer.
 
----
 
 ## Summary
 

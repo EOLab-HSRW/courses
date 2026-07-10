@@ -9,9 +9,15 @@ import project_setup from './programming/project-setup.png';
 import click_main_cpp from './programming/click-main-cpp.png';
 import minimal_code from './programming/minimal-code.png';
 import compile from './programming/compile.png';
-import compile_success from './programming/compile-success.png'
-import upload from './programming/upload.png'
-import upload_success from './programming/upload-success.png'
+import compile_success from './programming/compile-success.png';
+import upload from './programming/upload.png';
+import upload_success from './programming/upload-success.png';
+
+import ex_circuit from './programming/lib-project-sensors-schematic.png';
+import lib_project_open from './programming/lib-project-open-main.png';
+import lib_project_create from './programming/lib-project-create.png';
+import lib_project_setup from './programming/lib-project-setup.png'
+import lib_project_menu from './programming/lib-project-open-libraries.png'
 
 # Introduction to Programming Microcontrollers
 
@@ -114,7 +120,7 @@ Open **PlatformIO Home** and click **Open** to access the main PlatformIO menu.
 From the PlatformIO Home screen, create a new project. PlatformIO will open a project wizard where the basic project information must be entered.
 
 <div align="center">
-| <img src={create_new_project} width="640" alt="Create new project"/> |
+| <img src={lib_project_create} width="640" alt="Create new project"/> |
 |----|
 | Create a new PlatformIO project. |
 </div>
@@ -822,6 +828,291 @@ read the digital input
 → transmit the data
 → wait
 → repeat
+```
+
+ ---
+## Working With Libraries
+
+Currently you have only tried compilling and uploading an empty code to the microcontroller, and has been given a first visible program (Blink) and serial monitor using only the built-in functions provided by the Arduino framework such as `digitalWrite()`, `Serial.println()`, and `delay()`. These cover the basics, but when working with more complex components such as digital sensors, writing all the necessary low-level communication code from scratch would be time-consuming and error-prone.
+ 
+This is where **libraries** come in. A library is a collection of pre-written code that handles the low-level details of a specific component or protocol, exposing a clean, simple interface for you to use in your own programs. Rather than implementing the full communication protocol for a sensor yourself, you include the appropriate library and call its functions directly.
+ 
+In this section, you will learn how to search for, install, and use libraries in PlatformIO. You will then write and test programs for two different digital sensors, each using a different communication protocol.
+
+**Required Core Kit Components**
+- Breadboard
+- Microcontroller
+- USB A to Micro B cable
+- 4.7k resistor set
+- Jumper cables
+
+**Additional Components (will be provided during the lecture)**:
+- I2C sensor (BMP280 - Barometric and Temperature Sensor)
+- 1-Wire sensor (DS18B20 temperature sensor)
+
+
+**Before you start:**
+
+Both sensors must be wired on the breadboard before programming begins. The complete circuit for this section is shown below.
+
+<div align="center">
+| <img src={ex_circuit} width="640" alt="Exercise circuit"/> |
+|----|
+| Full circuit with both sensors assembled on the breadboard. |
+</div>
+
+> **Important wiring notes:**
+> - The DS18B20 requires a **4.7 kΩ pull-up resistor** connected between its data line and the 3.3 V supply. Without this resistor, the 1-Wire bus will not function correctly and the sensor will return errors.
+> - The BMP280 communicates over **I2C**, which uses two shared lines: **SDA** (data) and **SCL** (clock). Connect these to the corresponding SDA and SCL pins on your microcontroller.
+
+Wire the complete circuit as shown above before proceeding.
+
+### Setting Up a New Project
+ 
+
+Open **PlatformIO Home** and click **Open** to access the main PlatformIO menu.
+ 
+<div align="center">
+| <img src={lib_project_open} width="640" alt="Click open"/> |
+|----|
+| Open the PlatformIO main menu. | -->
+</div>
+
+From the PlatformIO Home screen, create a new project by clicking **New Project**.
+ 
+<div align="center">
+| <img src={create_new_project} width="640" alt="Create new project"/> |
+|----|
+| Create a new PlatformIO project. |
+</div>
+
+Name the project `hello-libraries`. Use the same board and framework selection as in the previous sections.
+ 
+<div align="center">
+| <img src={lib_project_setup} width="640" alt="Project setup"/> |
+|----|
+| PlatformIO project setup wizard. |
+ </div>
+
+Click **Finish**. You will notice this project opens faster than your first one — because you are using the same platform, the required build tools are already installed on your machine and do not need to be downloaded again.
+ 
+### Searching and Installing Libraries
+ 
+PlatformIO provides a built-in library manager that lets you search for and install libraries directly from the editor. Libraries are automatically added to your project configuration file (`platformio.ini`) so that PlatformIO knows to include them during compilation.
+ 
+Open **PlatformIO Home** and click **Libraries**.
+ 
+<div align="center">
+| <img src={lib_project_menu} width="640" alt="Libraries menu"/> |
+|----|
+| The PlatformIO Libraries menu. |
+</div>
+
+#### Installing the DallasTemperature Library (for DS18B20)
+ 
+In the search bar, type `DallasTemperature` and press Enter.
+ 
+<!-- <div align="center">
+| <img src={search_library} width="640" alt="Search library"/> |
+|----|
+| Searching for the DallasTemperature library. |
+ </div> -->
+
+Select the **DallasTemperature** library by **Miles Burton** from the search results.
+ 
+<!-- <div align="center">
+| <img src={select_library} width="640" alt="Select library"/> |
+|----|
+| Select the DallasTemperature library by Miles Burton. |
+
+ </div> -->
+
+
+Click **Add to Project**.
+ 
+<!-- <div align="center">
+| <img src={click_add} width="640" alt="Add to project"/> |
+|----|
+
+| Click "Add to Project" to add the library to your project. |
+ </div> -->
+
+A pop-up window will ask you to select which project to add the library to. Select `hello-libraries` and click **Add**.
+ 
+<!-- <div align="center">
+| <img src={add_library} width="640" alt="Add library"/> |
+|----|
+| Select the hello-libraries project and confirm. |
+ </div> -->
+
+> **Note:** The DallasTemperature library depends on another library called **OneWire**, which handles the low-level 1-Wire communication protocol. PlatformIO detects this dependency automatically and installs OneWire alongside DallasTemperature — you do not need to search for it separately. You can verify this by opening `platformio.ini` and checking that both libraries appear under `lib_deps`.
+ 
+#### Installing the BMP280 Library
+
+Go back to the Libraries search bar and search for `BMP280 arduino library`. Scroll through the results until you find **BMP280** by **mahfuz195**, then add it to the `hello-libraries` project using the same steps as above.
+
+This library provides a simple interface for reading temperature, pressure, and altitude data from the BMP280 sensor over I2C.
+
+### Understanding What Was Installed
+
++After adding both libraries, open `platformio.ini` from the root of your project. You should see something similar to the following under your environment settings:
+
+```ini
+[env:your_board]
+platform = ...
+board = ...
+framework = arduino
+lib_deps =
+    milesburton/DallasTemperature @ ^3.11.0
+    paulstoffregen/OneWire @ ^2.3.7
+    mahfuz195/BMP280 @ ^1.0.2
+```
+ 
+These entries tell PlatformIO exactly which libraries — and which versions — your project requires. If you share your project with a classmate or move it to another computer, PlatformIO will automatically download all listed libraries. This is one of the key advantages of PlatformIO over the classic Arduino IDE.
+
+### Programming the DS18B20 (1-Wire Sensor)
+
+Open `main.cpp` inside the `src` folder of your project.
+
+
+<!-- <div align="center">
+| <img src={click_main_cpp} width="640" alt="Open main.cpp"/> |
+|----|
+| Open `main.cpp` inside the `src` folder. |
+</div> -->
+
+Replace the contents of `main.cpp` with the following program:
+
+```cpp
+// Include the libraries needed for the DS18B20
+#include <OneWire.h>
+#include <DallasTemperature.h>
+
+// Define the pin connected to the DS18B20 data line
+#define ONE_WIRE_BUS 2
+ 
+// Create a OneWire instance on the defined pin
+// This handles the low-level 1-Wire communication protocol
+OneWire oneWire(ONE_WIRE_BUS);
+
+ 
+// Pass the OneWire instance to the DallasTemperature library
+// This gives the library access to the bus to communicate with the sensor
+DallasTemperature sensors(&oneWire);
+ 
+void setup(void)
+{
+  Serial.begin(9600);
+  Serial.println("DS18B20 Temperature Sensor Demo");
+ 
+  // Initialise the sensor library and scan the 1-Wire bus
+  sensors.begin();
+}
+ 
+void loop(void)
+{
+  // Request a temperature reading from all sensors on the bus
+  // This triggers the sensor to start its internal conversion
+  Serial.print("Requesting temperature... ");
+  sensors.requestTemperatures();
+  Serial.println("Done.");
+
+  // Wait for conversion to complete
+
+  delay(1500);
+
+  // Read the temperature from the first sensor found (index 0)
+  float tempC = sensors.getTempCByIndex(0);
+
+  // Check if the reading was successful
+  if (tempC != DEVICE_DISCONNECTED_C)
+
+  {
+    Serial.print("Temperature: ");
+    Serial.print(tempC);
+    Serial.println(" °C");
+  }
+  else
+  {
+    Serial.println("Error: Could not read temperature. Check wiring and pull-up resistor.");
+  }
+}
+```
+ 
+### Programming the BMP280 (I2C Sensor)
+ 
+Once you have verified the DS18B20 is working, clear `main.cpp` and replace it with the following program for the BMP280:
+ 
+```cpp
+#include "BMP280.h"
+#include "Wire.h"
+ 
+// Standard sea-level pressure in hPa, used for altitude calculation
+
+#define P0 1013.25
+ 
+BMP280 bmp;
+
+
+void setup()
+{
+  Serial.begin(9600);
+
+  // Attempt to initialise the BMP280 over I2C
+  if (!bmp.begin())
+  {
+    Serial.println("BMP280 initialisation failed. Check wiring and I2C address.");
+    // Halt execution — no point continuing if the sensor is not found
+    while (1);
+  }
+
+  Serial.println("BMP280 initialisation successful.");
+
+  // Set the oversampling rate for pressure readings
+  // Higher values give more accurate results at the cost of slower readings
+  bmp.setOversampling(4);
+}
+ 
+void loop()
+{
+  double T, P;
+
+  // Start a measurement and get the required delay in milliseconds
+  char result = bmp.startMeasurment();
+
+  if (result != 0)
+  {
+    // Wait for the measurement to complete
+    delay(result);
+
+    // Read the temperature (°C) and pressure (mBar) from the sensor
+    result = bmp.getTemperatureAndPressure(T, P);
+
+
+    if (result != 0)
+    {
+      // Calculate altitude from pressure relative to sea-level reference
+      double A = bmp.altitude(P, P0);
+      Serial.print("Temperature: ");
+      Serial.print(T, 2);
+      Serial.print(" °C  |  Pressure: ");
+      Serial.print(P, 2);
+      Serial.print(" mBar  |  Altitude: ");
+      Serial.print(A, 2);
+      Serial.println(" m");
+    }
+    else
+    {
+      Serial.println("Error: Failed to read temperature and pressure.");
+    }
+  }
+  else
+  {
+    Serial.println("Error: Failed to start measurement.");
+  }
+ 
+  delay(1000);
+}
 ```
 
 ---

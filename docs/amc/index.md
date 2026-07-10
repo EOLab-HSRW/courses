@@ -64,10 +64,10 @@ Any revisions to the schedule will be communicated through the official channels
 | 2026.04.21 | 14:00 - 15:30 | 03 02 130 | Introduction to applied measurement and control.                                                           | - [Introduction](/amc/introduction)           |
 | 2026.05.15 | 08:15 - 15:30 | 03 02 130 | General principles of electrical measurements.<br/> Power sources and regulators.                          | - [Breadboard and Schematic](/amc/handbook/breadboard)<br/>- [Measurements and Multimeter](/amc/handbook/measurements)<br/>- [Power and regulators](/amc/handbook/power)           |
 | ~2026.05.29~<br/>2026.06.05 | 08:15 - 15:30 | 03 02 130 | Sensors and Signals (part 1).<br/>Sensors and Signals (part 2).                           | - [Sensors and Signals](/amc/handbook/sensors)          |
-| 2026.06.19 | 08:15 - 15:30 | 03 02 130 | Introduction to microcontrollers and single-board-computers.<br/>Output devices and actuators.             |           |
-| 2026.07.03 | 08:15 - 15:30 | 03 02 130 | **Project Work Part 1 - Evaluation**.<br/>Wired and Wireless communication.                                |           |
-| 2026.07.10 | 08:15 - 15:30 | 03 02 130 | Data processing and visualization.<br/>Cloud, Database and Data loggers                                    |           |
-| 2026.07.17 | 08:15 - 15:30 | 03 02 130 | Project development and discussion sessions.                                                               |           |
+| 2026.06.19 | 08:15 - 15:30 | 03 02 130 | Introduction to microcontrollers and single-board-computers.<br/>Output devices and actuators.             | - [Disambiguations](/amc/handbook/disambiguations)<br/>- [Microcontrollers](/amc/handbook/microcontrollers)<br/>- [Introduction to programming MCU](/amc/handbook/programming)     |
+| 2026.07.03 | 08:15 - 15:30 | 03 02 130 | **Project Work Part 1 - Evaluation**.                                                                      |           |
+| 2026.07.10 | 08:15 - 15:30 | 03 02 130 | Wired and Wireless communication.                                                                          |           |
+| 2026.07.17 | 08:15 - 15:30 | 03 02 130 | Data processing and visualization.<br/>Cloud, Database and Data loggers.                                   |           |
 | 2026.08.07 | 08:15 - 11:30 | 03 02 130 | Project presentation and demonstrations. Provisional date for the project work part 2 (to be confirmed).   |           |
 
 ## Assessment & Grading

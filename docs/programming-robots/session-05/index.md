@@ -49,7 +49,7 @@ Source: [Binary Installation on Ubuntu](https://gazebosim.org/docs/harmonic/inst
 
 ### WSL - Fix Slow Perfomance on NVIDIA GPUs
 
-On the main page, in the [Prerequisites & Setup](/programming-robots-2026/#prerequisites--setup), section, the course explicitly recommends using a native Ubuntu installation. Nevertheless, a significant number of participants still chose to use WSL2 despite the warning about reduced performance. I explained at a high level that WSL uses software rendering to display graphical applications running inside the WSL environment, which significantly affects Gazebo’s performance. In other cases, users may encounter a black screen or even some form of segmentation fault.
+On the main page, in the [Prerequisites & Setup](../#prerequisites--setup), section, the course explicitly recommends using a native Ubuntu installation. Nevertheless, a significant number of participants still chose to use WSL2 despite the warning about reduced performance. I explained at a high level that WSL uses software rendering to display graphical applications running inside the WSL environment, which significantly affects Gazebo’s performance. In other cases, users may encounter a black screen or even some form of segmentation fault.
 
 The current patch applies only to NVIDIA GPUs. This problem is a known issue, [Windows 11 WSLg Gazebo Black Screen](https://github.com/gazebosim/gz-sim/issues/2670#issuecomment-2952642374), and it is related to the [Mesa driver](https://gitlab.freedesktop.org/mesa/mesa/-/issues/12294). 
 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1250 650" role="img" aria-labelledby="title desc">
+<title id="title">Combining MQTT Last Will and retained status messages</title>
+<desc id="desc">A client registers a retained offline Last Will, publishes retained online status, and the broker publishes offline after an ungraceful disconnect.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#326a9d"/></marker><style>.h{font:700 25px sans-serif;fill:#17212b}.t{font:19px sans-serif;fill:#17212b}.m{font:700 17px monospace;fill:#17212b}.box{fill:#eef5fb;stroke:#326a9d;stroke-width:3;rx:13}.store{fill:#fff8e7;stroke:#9c6b27;stroke-width:3;rx:13}.arr{stroke:#326a9d;stroke-width:4;marker-end:url(#a);fill:none}.fail{stroke:#a23c3c;stroke-width:4;stroke-dasharray:9 7;fill:none}.step{font:700 20px sans-serif;fill:#326a9d}</style></defs><rect width="1250" height="650" fill="white"/>
+<rect class="box" x="55" y="230" width="230" height="115"/><text class="h" x="170" y="278" text-anchor="middle">Client A</text><text class="t" x="170" y="315" text-anchor="middle">sensor node</text>
+<rect class="box" x="510" y="190" width="250" height="190"/><text class="h" x="635" y="245" text-anchor="middle">MQTT Broker</text><text class="t" x="635" y="285" text-anchor="middle">stores retained status</text><text class="t" x="635" y="317" text-anchor="middle">and registered Will</text>
+<rect class="box" x="970" y="230" width="230" height="115"/><text class="h" x="1085" y="278" text-anchor="middle">Client B</text><text class="t" x="1085" y="315" text-anchor="middle">status monitor</text>
+<path class="arr" d="M285 225 C365 140 430 140 500 215"/><text class="step" x="390" y="105" text-anchor="middle">1. CONNECT</text><text class="m" x="390" y="138" text-anchor="middle">Will: status/client-a = offline</text><text class="m" x="390" y="166" text-anchor="middle">retain=true</text>
+<path class="arr" d="M285 285 H500"/><text class="step" x="392" y="270" text-anchor="middle">2. PUBLISH retained</text><text class="m" x="392" y="322" text-anchor="middle">status/client-a = online</text>
+<rect class="store" x="505" y="445" width="260" height="105"/><text class="h" x="635" y="485" text-anchor="middle">Broker storage</text><text class="m" x="635" y="525" text-anchor="middle">status/client-a = online</text><path class="arr" d="M635 380 V435"/>
+<path class="arr" d="M770 285 H960"/><text class="step" x="865" y="270" text-anchor="middle">3. SUBSCRIBE</text><text class="m" x="865" y="322" text-anchor="middle">receives online immediately</text>
+<path class="fail" d="M170 355 V465"/><text class="step" x="170" y="510" text-anchor="middle" fill="#a23c3c">4. network failure</text>
+<path class="arr" d="M505 505 C405 570 310 570 220 500"/><text class="m" x="370" y="605" text-anchor="middle">broker replaces retained value with offline</text>
+<path class="arr" d="M765 500 C880 565 985 520 1040 355"/><text class="m" x="980" y="590" text-anchor="middle">subscriber receives offline</text>
+</svg>

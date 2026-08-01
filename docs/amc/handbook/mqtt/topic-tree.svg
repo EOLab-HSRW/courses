@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<title id="title">Hierarchical MQTT topic structure</title>
+<desc id="desc">A topic hierarchy showing Europe, Amsterdam, Noord and Oost, with temperature and humidity measurements.</desc>
+<defs><style>
+.box{fill:#eef5fb;stroke:#326a9d;stroke-width:3;rx:12}.leaf{fill:#fff;stroke:#5c7893;stroke-width:2;rx:10}.t{font:700 23px sans-serif;fill:#17212b}.m{font:19px monospace;fill:#17212b}.line{stroke:#7a95ad;stroke-width:3;fill:none}
+</style></defs>
+<rect width="1200" height="620" fill="white"/>
+<rect class="box" x="505" y="35" width="190" height="65"/><text class="t" x="600" y="77" text-anchor="middle">europe</text>
+<path class="line" d="M600 100 V145"/>
+<rect class="box" x="470" y="145" width="260" height="65"/><text class="t" x="600" y="187" text-anchor="middle">amsterdam</text>
+<path class="line" d="M600 210 V250 M305 250 H895 M305 250 V285 M895 250 V285"/>
+<rect class="box" x="190" y="285" width="230" height="65"/><text class="t" x="305" y="327" text-anchor="middle">noord</text>
+<rect class="box" x="780" y="285" width="230" height="65"/><text class="t" x="895" y="327" text-anchor="middle">oost</text>
+<path class="line" d="M305 350 V395 M135 395 H475 M135 395 V430 M475 395 V430 M895 350 V395 M725 395 H1065 M725 395 V430 M1065 395 V430"/>
+<rect class="leaf" x="35" y="430" width="200" height="70"/><text class="t" x="135" y="473" text-anchor="middle">temperature</text>
+<rect class="leaf" x="375" y="430" width="200" height="70"/><text class="t" x="475" y="473" text-anchor="middle">humidity</text>
+<rect class="leaf" x="625" y="430" width="200" height="70"/><text class="t" x="725" y="473" text-anchor="middle">temperature</text>
+<rect class="leaf" x="965" y="430" width="200" height="70"/><text class="t" x="1065" y="473" text-anchor="middle">humidity</text>
+<text class="m" x="600" y="560" text-anchor="middle">europe/amsterdam/noord/temperature</text>
+<text class="m" x="600" y="592" text-anchor="middle">levels are separated by /</text>
+</svg>

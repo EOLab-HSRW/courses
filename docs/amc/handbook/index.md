@@ -13,6 +13,9 @@ import disambiguations_banner from './banners/disambiguations-chapter-banner.png
 import microcontrollers_banner from './banners/microcontrollers-chapter-banner.png';
 import programming_banner from './banners/programming-chapter-banner.png';
 import outputs_banner from './banners/outputs-chapter-banner.png';
+import wired_wireless_communication_banner from './banners/wired-wireless-communication-banner.png'
+import mqtt_banner from './banners/mqtt-banner.png'
+import nig_banner from './banners/nig-banner.png';
 
 # The AMC Mini-Handbook
 
@@ -89,6 +92,30 @@ import outputs_banner from './banners/outputs-chapter-banner.png';
     <div className="chapterCardOverlay">
       <span className="chapterNumber">Chapter 9</span>
       <h2>Output Devices</h2>
+    </div>
+  </Link>
+
+  <Link className="chapterCard" to="/amc/handbook/communication">
+    <img className="chapterCardImage" src={wired_wireless_communication_banner} alt="" draggable="false" />
+    <div className="chapterCardOverlay">
+      <span className="chapterNumber">Chapter 10</span>
+      <h2>Wired and Wireless Communication</h2>
+    </div>
+  </Link>
+
+  <Link className="chapterCard" to="/amc/handbook/outputs">
+    <img className="chapterCardImage" src={mqtt_banner} alt="" draggable="false" />
+    <div className="chapterCardOverlay">
+      <span className="chapterNumber">Chapter 11</span>
+      <h2>MQTT</h2>
+    </div>
+  </Link>
+
+  <Link className="chapterCard" to="/amc/handbook/nig">
+    <img className="chapterCardImage" src={nig_banner} alt="" draggable="false" />
+    <div className="chapterCardOverlay">
+      <span className="chapterNumber">Chapter 12</span>
+      <h2>NIG</h2>
     </div>
   </Link>
 

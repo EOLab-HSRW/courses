@@ -1,0 +1,586 @@
+---
+title: Programming Robots
+hide_title: true
+pagination_next: null
+---
+
+<style>{`
+
+.robot-course-hero {
+  --robot-hero-primary: #2980b9;
+  --robot-hero-dark: #1f6696;
+  --robot-hero-deep: #123b57;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  margin: 0 0 2.25rem;
+  padding: clamp(1.5rem, 4vw, 3.25rem);
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(255, 255, 255, 0.22),
+      transparent 25rem
+    ),
+    linear-gradient(
+      135deg,
+      var(--robot-hero-primary) 0%,
+      var(--robot-hero-dark) 52%,
+      var(--robot-hero-deep) 100%
+    );
+  border: 1px solid rgba(41, 128, 185, 0.48);
+  border-radius: 0;
+  box-shadow: 0 18px 46px rgba(18, 59, 87, 0.24);
+}
+
+.robot-course-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    );
+  background-size: 28px 28px;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 10%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 10%,
+    #000 100%
+  );
+}
+
+.robot-course-hero::after {
+  position: absolute;
+  z-index: -1;
+  top: -8rem;
+  right: -6rem;
+  width: 18rem;
+  height: 18rem;
+  content: "";
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 2.75rem rgba(255, 255, 255, 0.025),
+    0 0 0 5.5rem rgba(255, 255, 255, 0.018);
+}
+
+.robot-course-kicker {
+  margin-bottom: 0.9rem;
+  color: #d8efff;
+  letter-spacing: 0.09em;
+}
+
+.robot-course-title {
+  display: inline-grid;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 1.15rem;
+}
+
+.robot-course-title h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.35rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+.robot-course-reloaded {
+  display: block;
+  margin-top: 0.25rem;
+  padding-right: 0.12em;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(0.95rem, 1.7vw, 1.2rem);
+  justify-self: end;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+
+.robot-course-hero > p {
+  max-width: 720px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(1rem, 1.7vw, 1.12rem);
+  line-height: 1.65;
+}
+
+.robot-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+
+}
+
+.robot-meta-item {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.92rem;
+  line-height: 1.3;
+  background: transparent;
+}
+
+.robot-meta-item > p {
+  margin: 0;
+}
+
+
+.robot-meta-item strong {
+  display: block;
+  margin-bottom: 0.18rem;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.robot-meta-subline {
+  display: block;
+  margin-top: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.72rem;
+  line-height: 1.1;
+}
+
+.robot-day-schedule {
+  --robot-schedule-primary: #2980b9;
+  margin: 1.25rem 0 1.5rem;
+  border-top: 3px solid var(--robot-schedule-primary);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.robot-schedule-row {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  align-items: center;
+  min-height: 3.4rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.robot-schedule-row:first-child {
+  border-top: 0;
+}
+
+.robot-schedule-time {
+  padding: 0.75rem 1rem 0.75rem 0;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.84rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+  white-space: nowrap;
+}
+
+.robot-schedule-content {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0 0.75rem 1rem;
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.robot-schedule-label {
+  color: var(--ifm-font-color-base);
+  font-weight: 650;
+}
+
+.robot-schedule-duration {
+  flex: 0 0 auto;
+  margin-right: 0.75rem;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.robot-schedule-row--break .robot-schedule-label,
+.robot-schedule-row--break .robot-schedule-time {
+  color: var(--ifm-font-color-secondary);
+  font-weight: 500;
+}
+
+.robot-schedule-row--break .robot-schedule-content {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.robot-schedule-row--lunch .robot-schedule-content {
+  background: rgba(41, 128, 185, 0.065);
+}
+
+.robot-schedule-note {
+  margin: 0 0 2.25rem;
+  padding: 1rem 1.1rem;
+  background: var(--ifm-color-emphasis-100);
+  border-left: 3px solid #2980b9;
+}
+
+
+.robot-schedule-note h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+}
+
+
+.robot-schedule-note p {
+  margin: 0.45rem 0 0;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+[data-theme="dark"] .robot-schedule-row--lunch .robot-schedule-content {
+  background: rgba(85, 172, 230, 0.08);
+}
+
+
+@media (max-width: 576px) {
+  .robot-schedule-row {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .robot-schedule-time {
+    padding: 0.7rem 0 0.15rem;
+  }
+
+  .robot-schedule-content {
+    padding: 0 0 0.7rem;
+    border-left: 0;
+    background: transparent;
+  }
+
+  .robot-schedule-row--break .robot-schedule-content,
+  .robot-schedule-row--lunch .robot-schedule-content {
+    background: transparent;
+  }
+
+  .robot-schedule-duration {
+    display: none;
+  }
+}
+
+
+.robot-session-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2.25rem;
+}
+
+.robot-session-card {
+  position: relative;
+  display: block;
+  min-width: 0;
+  padding: 1.15rem 1.2rem 1.25rem;
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid rgba(41, 128, 185, 0.24);
+  border-top: 3px solid var(--robot-hero-primary);
+  border-radius: 0;
+  box-shadow: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+
+.robot-session-card:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  background: rgba(41, 128, 185, 0.055);
+  border-color: rgba(41, 128, 185, 0.48);
+  border-top-color: var(--robot-hero-primary);
+}
+
+.robot-session-card:focus-visible {
+  outline: 3px solid rgba(41, 128, 185, 0.3);
+  outline-offset: 3px;
+}
+
+.robot-session-number {
+  margin-bottom: 0.45rem;
+  color: var(--robot-hero-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.robot-session-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--ifm-heading-color);
+  font-size: 1.16rem;
+  line-height: 1.25;
+}
+
+.robot-session-card p {
+  margin: 0;
+  color: var(--ifm-font-color-secondary);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+[data-theme="dark"] .robot-session-card {
+  background: rgba(255, 255, 255, 0.025);
+  border-color: rgba(85, 172, 230, 0.24);
+  border-top-color: #55ace6;
+}
+
+[data-theme="dark"] .robot-session-card:hover {
+  background: rgba(85, 172, 230, 0.075);
+
+  border-color: rgba(85, 172, 230, 0.5);
+  border-top-color: #55ace6;
+}
+
+[data-theme="dark"] .robot-session-number {
+  color: #73bce9;
+}
+
+[data-theme="dark"] .robot-course-hero {
+  border-color: rgba(85, 172, 230, 0.5);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34);
+}
+
+@media (max-width: 996px) {
+  .robot-meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .robot-session-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .robot-course-hero {
+    margin-inline: -0.25rem;
+    border-radius: 0;
+  }
+
+  .robot-course-title {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .robot-course-title h1 {
+    font-size: clamp(2.2rem, 13vw, 3.5rem);
+  }
+
+  .robot-course-reloaded {
+    padding-right: 0;
+  }
+
+  .robot-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .robot-session-grid {
+    gap: 0.8rem;
+  }
+
+  .robot-session-card {
+    padding: 1rem 1.05rem 1.1rem;
+  }
+}
+`}</style>
+
+<div className="robot-course-hero">
+  <div className="robot-course-kicker">
+    EOLab · ROS 2 Bootcamp
+  </div>
+
+  <div className="robot-course-title">
+    <h1>Programming Robots</h1>
+    <span className="robot-course-reloaded">reloaded</span>
+  </div>
+
+  <p>
+    Five focused days for building practical ROS 2 skills—from
+    workspaces and nodes to launch systems, visualization, and
+    simulation.
+  </p>
+
+  <div className="robot-meta-grid">
+    <div className="robot-meta-item">
+      <strong>Location</strong>
+      Green FabLab, Kamp-Lintfort
+    </div>
+    <div className="robot-meta-item">
+      <strong>Dates</strong>
+      2–6 March 2026
+    </div>
+    <div className="robot-meta-item">
+      <strong>Daily time</strong>
+      09:00–17:00 (Europe)
+    </div>
+    <div className="robot-meta-item">
+      <strong>Fee</strong>
+      Free of charge
+    </div>
+  </div>
+</div>
+
+---
+## Sessions Layout
+
+Each bootcamp day follows the same structure, with focused working blocks separated by short breaks and a one-hour lunch window.
+
+<div className="robot-day-schedule">
+  <div className="robot-schedule-row">
+    <div className="robot-schedule-time">09:00–10:30</div>
+    <div className="robot-schedule-content">
+      <span className="robot-schedule-label">Session block</span>
+      <span className="robot-schedule-duration">90 min</span>
+    </div>
+  </div>
+
+  <div className="robot-schedule-row robot-schedule-row--break">
+    <div className="robot-schedule-time">10:30–10:45</div>
+    <div className="robot-schedule-content">
+      <span className="robot-schedule-label">Break</span>
+      <span className="robot-schedule-duration">15 min</span>
+    </div>
+  </div>
+
+  <div className="robot-schedule-row">
+    <div className="robot-schedule-time">10:45–12:15</div>
+    <div className="robot-schedule-content">
+      <span className="robot-schedule-label">Session block</span>
+      <span className="robot-schedule-duration">90 min</span>
+    </div>
+  </div>
+
+  <div className="robot-schedule-row robot-schedule-row--lunch">
+    <div className="robot-schedule-time">12:15–13:15</div>
+    <div className="robot-schedule-content">
+      <span className="robot-schedule-label">Lunch break</span>
+      <span className="robot-schedule-duration">60 min</span>
+    </div>
+  </div>
+
+  <div className="robot-schedule-row">
+    <div className="robot-schedule-time">13:15–14:45</div>
+    <div className="robot-schedule-content">
+      <span className="robot-schedule-label">Session block</span>
+      <span className="robot-schedule-duration">90 min</span>
+    </div>
+  </div>
+
+
+  <div className="robot-schedule-row robot-schedule-row--break">
+    <div className="robot-schedule-time">14:45–15:00</div>
+    <div className="robot-schedule-content">
+      <span className="robot-schedule-label">Break</span>
+      <span className="robot-schedule-duration">15 min</span>
+    </div>
+  </div>
+
+  <div className="robot-schedule-row">
+    <div className="robot-schedule-time">15:00–17:00</div>
+    <div className="robot-schedule-content">
+      <span className="robot-schedule-label">Session block</span>
+      <span className="robot-schedule-duration">120 min</span>
+    </div>
+  </div>
+</div>
+
+<div className="robot-schedule-note">
+  <h3>Lunch and Snacks</h3>
+  <p>
+    Lunch is not provided. You may bring your own food or use the
+    one-hour break to purchase lunch nearby. Designated eating spaces
+    and a microwave will be available.
+  </p>
+  <p>
+    Coffee, sugar, and hot water for tea will be provided. A shared
+    snack table will also be available; contributing something is
+    entirely optional.
+  </p>
+</div>
+
+---
+## Schedule Overview
+
+<div className="robot-session-grid">
+  <a className="robot-session-card" href="./session-01">
+    <div className="robot-session-number">Session 01 · Monday</div>
+    <h3>ROS foundations</h3>
+    <p>
+      Bootcamp orientation, introduction to ROS, workspace setup,
+      and package management.
+    </p>
+  </a>
+
+  <a className="robot-session-card" href="./session-02">
+    <div className="robot-session-number">Session 02 · Tuesday</div>
+    <h3>Nodes and topics</h3>
+    <p>
+      ROS nodes, interfaces, publishers, subscribers, and
+      topic-based communication.
+    </p>
+  </a>
+
+  <a className="robot-session-card" href="./session-03">
+    <div className="robot-session-number">Session 03 · Wednesday</div>
+    <h3>Services and actions</h3>
+    <p>
+      Warm-up exercise, request-response services, and long-running
+      action workflows.
+    </p>
+  </a>
+
+  <a className="robot-session-card" href="./session-04">
+    <div className="robot-session-number">Session 04 · Thursday</div>
+    <h3>Robust ROS systems</h3>
+    <p>
+      Ecosystem review, action clients, QoS, arguments, and node
+      parameters.
+    </p>
+  </a>
+
+  <a className="robot-session-card" href="./session-05">
+    <div className="robot-session-number">Session 05 · Friday</div>
+    <h3>Launch and simulation</h3>
+    <p>
+      Keyboard control, launch files, RViz visualization, and
+      Gazebo simulation.
+    </p>
+  </a>
+</div>
+
+---
+## Preparation
+
+- **Python:** Basic Python skills, including basic object-oriented programming concepts. For a refresher, see [Think Python, 3rd Edition](https://allendowney.github.io/ThinkPython/).
+- **Operating system:** [Ubuntu 22.04 Desktop](https://releases.ubuntu.com/jammy/) is required for the exercises and simulator.
+- **Recommended:** A native Ubuntu installation. Dual boot is possible, but may be impractical for daily use.
+- **Windows:** Windows 11 version 22H2 or newer with [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) and Ubuntu 22.04 can be used, but simulation performance may be very limited.
+- **Virtual machines:** Not recommended because of common graphics-driver and simulation issues. If needed, [VMware Workstation Pro](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion) is the suggested option.
+- **macOS:** Not supported.
+
+Bring your own laptop with the setup described above so you can work through the exercises during each session.
+
+You do not need to install ROS beforehand. We will install and configure it together during the first session.

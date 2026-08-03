@@ -6,7 +6,7 @@
 
 ## Who are we
 
-[Earth Observation Lab (EOLab)](https://eolab.de) is an educational, innovation laboratory dedicated to environmental science and technology at the Rhine-Waal University of Applied Sciences, Kamp-Lintfort campus. Founded in 2020 by [Dr. Rolf Becker](https://www.hochschule-rhein-waal.de/en/user/7254), it is a culmination of three labs (Formerly known as [Lab3](https://www.hochschule-rhein-waal.de/en/faculties/communication-and-environment/laboratories/lab3)) - DroneLab, IoTLab (Internet of Things Lab) and EOLab.
+[Earth Observation Lab (EOLab)](https://eolab.de) is an educational, innovation laboratory dedicated to environmental science and technology at the Rhine-Waal University of Applied Sciences, Kamp-Lintfort campus. Founded in 2020 by [Prof. Dr.-Ing. Rolf Becker](https://www.hochschule-rhein-waal.de/en/user/7254), it is a culmination of three labs (Formerly known as [Lab3](https://www.hochschule-rhein-waal.de/en/faculties/communication-and-environment/laboratories/lab3)) - DroneLab, IoTLab (Internet of Things Lab) and EOLab.
 
 ## Why are we doing this
 
@@ -88,3 +88,15 @@ Mention during the session:
 ## ROS Packages
 
 [ROS Packages](https://robotics.harleylara.com/en/ros2/pkgs)
+
+## Robots
+
+During the live session, someone asked for recommendations for low-cost robots. I explained that robots are generally still expensive for students and for personal acquisition, but I presented some of the more affordable options I am familiar with.
+
+List of robot (These are not explicit recommendations in favor of anything.)
+- [Duckiebot (DB-J) (version 2021)](https://get.duckietown.com/products/duckiebot-db21?variant=45917225451695)
+- [ROSbot 2 by Husarion](https://husarion.com/tutorials/howtostart/rosbot---quick-start/) (ROSbot 2 has reached end-of-life status as of August 31, 2023.)
+- [ROSbot 3 by Husarion](https://store.husarion.com/products/rosbot-3)
+- [TurtleBot 4 Lite or Pro by ClearpathRobotics](https://www.mybotshop.de/TurtleBot-4-Lite)
+- [nanosaur - Open Source Designed & made by Raffaello Bonghi](https://nanosaur.ai/)
+- [Collection of ROS Robots by Hiwonder](https://www.hiwonder.com/collections/ros-robot)

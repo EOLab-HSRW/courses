@@ -2,7 +2,7 @@
 
 ## Survey
 
-[Survey -  Programming Robots, Spring Bootcamp](https://hochschule-rhein-waal.sciebo.de/apps/forms/embed/aEkmtMXDtjBwoXRDqjrbsZo5)
+[Survey -  Programming Robots, Summer Bootcamp 2026](https://hochschule-rhein-waal.sciebo.de/apps/forms/s/TiTFKtdzMQKL5Wtf6qFYwLan)
 
 ## Who are we
 
@@ -51,14 +51,26 @@ After the session (for example, at home), you should be able to reproduce everyt
 
 **In-class questions** may or may not appear in the session notes. Whether a question is included is at the instructor’s discretion. If a question leads to a broadly useful clarification, it may be captured in the final notes; if it’s more personal or context-specific, it may not. In those cases, learners are encouraged to keep their own personal notes for the details most relevant to them.
 
+## Warm-up Activity: Designing a 2D LiDAR Data Format
+
+Imagine that a 2D LiDAR sensor is scanning its surroundings and producing a series of distance measurements.
+
+On a piece of paper, propose a simple schema or data format that could be used to:
+
+* represent the LiDAR readings;
+* store them in a file;
+* transmit them between two systems.
+
+Your format should include relevant features about a 2D LiDAR.
+
+![example image of the operation mode](https://robotcopper.github.io/config/assets/images/Synthetic2DLidarScanGenerator/plot.png).
+
+
 ## Whirlwind Tour - Linux Commands
 
 [Linux Cheat Sheet](https://robotics.harleylara.com/en/ros2/linux-cheat-sheet).
 
 ## Introduction to ROS
-
-Small activity: Write **on a piece of paper** the schema/format you would propose to encode, transport or store the readings of a 2D LiDAR sensor, see [example image of the operation mode](https://robotcopper.github.io/config/assets/images/Synthetic2DLidarScanGenerator/plot.png).
-
 
 [ROS Introduction](https://robotics.harleylara.com/en/ros2/intro)
 

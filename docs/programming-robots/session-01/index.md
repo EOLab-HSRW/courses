@@ -74,6 +74,9 @@ Your format should include relevant features about a 2D LiDAR.
 
 [ROS Introduction](https://robotics.harleylara.com/en/ros2/intro)
 
+Mention during the session:
+- [Zentrum für Assistive Technologien Rhein-Ruhr](https://zat.nrw/).
+
 ## Install ROS
 
 [Ubuntu (deb packages)](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html)

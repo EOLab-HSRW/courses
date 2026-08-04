@@ -11,3 +11,7 @@
 ## Topics
 
 [ROS Topics](https://robotics.harleylara.com/en/ros2/topics)
+
+## Getting to Know the Robot
+
+[Foxy Robot](https://github.com/EOLab-HSRW/foxy-docs)

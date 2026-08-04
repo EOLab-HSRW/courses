@@ -14,4 +14,4 @@
 
 ## Getting to Know the Robot
 
-[Foxy Robot](https://github.com/EOLab-HSRW/foxy-docs)
+[Foxy Robot](https://eolab-hsrw.github.io/foxy-docs/)

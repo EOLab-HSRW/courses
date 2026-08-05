@@ -2,15 +2,8 @@
 
 ## Warm-up Excercise
 
-Open the turtlesim simulator:
+[Make it Shine](https://eolab-hsrw.github.io/foxy-docs/docs/exercises/shine)
 
-```
-ros2 run turtlesim turtlesim_node
-```
-
-To control the linear and angular velocities make sure to publish in the topic: `/turtle1/cmd_vel`, and the message type is `geometry_msgs/msg/Twist`.
-
-Your task is to write a publisher that drive the turtle in a way that draw a circle.
 
 ## Services
 

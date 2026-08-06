@@ -1,10 +1,14 @@
 # Session 4
 
-Change
+## Actions
 
-## Review of ROS Report
+[ROS Actions](https://robotics.harleylara.com/en/ros2/actions-)
 
-- [2025 ROS Metrics Report ](https://discourse.openrobotics.org/t/2025-ros-metrics-report/52575)
+## ROS Python Client (rclpy) Documentation
+
+You can find the official python client documentation, [rclpy](https://docs.ros.org/en/rolling/p/rclpy/#) to get all the information about the available functions that you can perform with the pythonn client.
+
+Keep in mind the the client documentation pointing to the `rolling` distribution (the latest dev branch) and some functions may not be implemented in your distribution (e.g. Humble).
 
 ## Task - Complete the Action Client
 

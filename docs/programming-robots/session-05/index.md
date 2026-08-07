@@ -15,7 +15,7 @@ So, if you want to go back over that part of the session, just check the [RViz U
 
 ## Actions
 
-[ROS Actions](https://robotics.harleylara.com/en/ros2/actions-)
+[ROS Actions](https://robotics.harleylara.com/en/ros2/actions)
 
 ## ROS Python Client (rclpy) Documentation
 

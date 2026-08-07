@@ -1,34 +1,63 @@
 # Session 5
 
-## Warm-up Task: Controlling a Turtle with your Keyboard
-
-Start a turtle using turtlesim:
-
-```
-ros2 run turtlesim turtlesim_node
-```
-
-Now we want to use the node `teleop_twist_keyboard` from the package [`teleop_twist_keyboard`](https://index.ros.org/p/teleop_twist_keyboard/#humble). **Your task** is: Using `teleop_twist_keyboard` move the turtle using your keyboard.
-
-## Launch System
-
-TBA
-- [Intrinsic Flowstate](https://www.intrinsic.ai/flowstate) a visual flow diagram to build behaviors.
-- [Intrinsic Product Keynote - May 15, 2023](https://www.youtube.com/watch?v=QtSShST58io)
-
 ## Visualization tools (RVIZ and others)
 
 For the RViz part of the session, I ended up giving a more direct, hands-on explanation of the most useful panels in RViz. The main reason is that I’m not planning to write separate session notes for that section, at least not myself. Honestly, the RViz User Guide already does an excellent job of explaining how it works, so writing additional notes for RViz would mostly be redundant.
 
 So, if you want to go back over that part of the session, just check the [RViz User Guide](https://docs.ros.org/en/humble/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html).
-
 - [PlotJuggler](https://github.com/facontidavide/PlotJuggler)
 - [Foxglove](https://foxglove.dev/)
 - [Rerun](https://rerun.io/). I forgot to mention this one in the session.
 
 ## Simulator (Gazebo)
 
-TBA
+[Gazebo a Naming review](https://robotics.harleylara.com/en/ros2/gazebo)
+
+## Actions
+
+[ROS Actions](https://robotics.harleylara.com/en/ros2/actions-)
+
+## ROS Python Client (rclpy) Documentation
+
+You can find the official python client documentation, [rclpy](https://docs.ros.org/en/rolling/p/rclpy/#) to get all the information about the available functions that you can perform with the pythonn client.
+
+Keep in mind the the client documentation pointing to the `rolling` distribution (the latest dev branch) and some functions may not be implemented in your distribution (e.g. Humble).
+
+## Review RCLPY API
+
+```python
+# publisher API
+pub = create_publisher(<MsgType>, "<topic_name>", <QoS>)
+create_timer(<timer_rate_in_sec>, callback_timer_done)
+pub.publish(<Message[MsgType]>)
+
+# subscriber API
+create_subscription(<MsgType>, "<topic_name>", callback_new_msg, <QoS>)
+def callback_new_msg(new_msg): ...
+
+# service server API
+create_service(<ServiceType>, "<service_name>", callback_service_requested)
+
+# service client API
+service_client = create_client(<ServiceType>, "<service_name>")
+future = service_client.call_async(<Service[ServiceType]>)
+rclpy.spin_until_future_complete(<Node>, future)
+
+# more complex API
+ActionServer(<Node>, <...>)
+
+# more complex API
+ActionClient(<Node>, <...>)
+```
+
+## Launch System
+
+[Launch System](https://robotics.harleylara.com/en/ros2/launch)
+
+Build around the ros launch system:
+- [Intrinsic Flowstate](https://www.intrinsic.ai/flowstate) a visual flow diagram to build behaviors.
+- [Intrinsic Product Keynote - May 15, 2023](https://www.youtube.com/watch?v=QtSShST58io)
+
 
 ### Install Gz Harmonic + Humble
 

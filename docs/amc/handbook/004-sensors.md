@@ -700,7 +700,7 @@ Before you start:
 3. Once your circuit has been fully verified and the microcontroller has been programmed, connect the microcontroller to your computer using the provided USB cable.
 If your computer does not detect the microcontroller, you may be missing the required driver. Please download the driver for you operating system from this website [CP210x USB to UART Bridge VCP Drivers](https://www.silabs.com/software-and-tools/usb-to-uart-bridge-vcp-drivers?tab=downloads).
 
-4. Open the following page: [AMC Simple Web Terminal](https://eolab-hsrw.github.io/amc-simple-web-terminal/), and connect to the microcontroller through the web terminal.
+4. Open the following page: [AMC Simple Web Terminal](https://eolab-hsrw.github.io/amc-simple-web-terminal/) (in Google Chrome), and connect to the microcontroller through the web terminal.
 
 The web terminal should print three values separated by commas:
 
